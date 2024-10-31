@@ -1,0 +1,10 @@
+.centrar {
+    text-align: center;
+}
+  
+.btn-success, .btn-danger {
+    border-radius: 5px;
+    height: 40px;
+    font-size: 17px;
+    box-shadow: 2px 2px 5px #999;
+}

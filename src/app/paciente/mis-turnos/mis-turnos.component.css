@@ -1,0 +1,37 @@
+.container-table{
+    border: 5 solid black;
+}
+  
+img {
+    width: 120px;
+    height: 120px;
+    display:block;
+    /*border-radius:50%; la imagen la hace redonda*/
+    border-collapse: 50%;  /* La imagen la hace cuadrada */
+    box-shadow: 2px 2px 5px #999;
+}
+  
+.scrollbar-especialidades {
+    position: relative;
+    height:9em;
+    overflow: auto;
+}
+  
+@media (max-width: 520) {
+    td{
+        font-size: 10px!important;
+    }
+}
+  
+.btn-success, .btn-danger {
+    border-radius: 5px;
+    height: 40px;
+    font-size: 17px;
+    box-shadow: 2px 2px 5px #999;
+}
+  
+.datos-turno  {
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}  

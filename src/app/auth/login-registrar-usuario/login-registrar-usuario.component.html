@@ -1,0 +1,143 @@
+<div class="conteiner">
+
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+        <app-spinner></app-spinner>
+    </div>
+
+    <div *ngIf='!loading' class="col-md-12 mb-2">
+        <!-- <div class="col-lg-10 offset-lg-3"> -->
+            <!-- <div class="card"> -->
+                <!-- <div class=" ody"> -->
+                    <h2 class="text-center tituloPropio" style="color: blue" ><strong>REGISTRO DE PACIENTE</strong></h2>
+                    <form [formGroup]="registrarForm" (ngSubmit)="registrar()">
+                    <div class="row formulario">
+                        <!--Nombre-->
+                        <div class="col-md-6 mb-2">
+                            <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Nombre">
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('nombre')?.hasError('required') && registrarForm.get('nombre')?.touched">
+                                El Nombre <strong>es requerido</strong>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('nombre')?.hasError('minlength') && registrarForm.get('nombre')?.touched">
+                                Nombre como mínimo <strong>debe tener 4 caracteres</strong>
+                            </span>
+                        </div>
+                        <!--Apellido-->
+                        <div class="col-md-6 mb-2">
+                            <input type="text" formControlName="apellido" class="form-control form-control-lg" placeholder="Apellido">
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('apellido')?.hasError('required') && registrarForm.get('apellido')?.touched">
+                                El Apellido <strong>es requerido</strong>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('apellido')?.hasError('minlength') && registrarForm.get('apellido')?.touched">
+                                Apellido como mínimo <strong>debe tener 4 caracteres</strong>
+                            </span>
+                        </div>
+                        <!--Edad-->
+                        <div class="col-md-6 mb-2">
+                            <input type="number" formControlName="edad" class="form-control form-control-lg" placeholder="Edad">
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('edad')?.hasError('required') && registrarForm.get('edad')?.touched">
+                                La Edad <strong>es requerido</strong>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('edad')?.hasError('minlength') && registrarForm.get('edad')?.touched">
+                                Edad como minimo <strong>debe tener 22 años</strong>
+                            </span>
+                        </div>
+                        <!--DNI-->
+                        <div class="col-md-6 mb-2">
+                            <input type="number" formControlName="dni" class="form-control form-control-lg" placeholder="DNI">
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('dni')?.hasError('required') && registrarForm.get('dni')?.touched">
+                                El DNI <strong>es requerido</strong>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('dni')?.hasError('minlength') && registrarForm.get('dni')?.touched">
+                                Edad como minimo <strong>6 digitos</strong>
+                            </span>
+                        </div>
+                        <!--Obrasocial - realice modificaciones-->
+                        <div class="col-md-6 mb-2">
+                           <input list="obrasocial" formControlName="obrasocial" class="form-control form-control-lg" placeholder="Escriba una Obra Social..."> 
+                            <!--<select class="form-control" formControlName="obrasocial">
+                                <option [ngValue]="null">Escriba una Obra Social</option>
+                                <option *ngFor="let item of listObrasocial" [ngValue]="item.nombre" >{{item.nombre}}</option>
+                                <<<<modifque 1<option *ngFor="let obrasocial of listObrasocial" [ngValue]="obrasocial.nombre" >{{obrasocial.nombre}}</option>
+                            </select>-->
+                            <span class="text-danger" *ngIf="registrarForm.get('obrasocial')?.hasError('required') && registrarForm.get('obrasocial')?.touched">
+                                La obra social <strong>es requerido</strong>
+                            </span>
+                        </div>
+                        <!--Usuario/correo-->
+                        <div class="col-md-6 mb-2">
+                            <input type="email" formControlName="correo" class="form-control form-control-lg" placeholder="Correo electrónico">
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('correo')?.hasError('required') && registrarForm.get('correo')?.touched">
+                                El Correo <strong>es requerido</strong>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('correo')?.hasError('email') && registrarForm.get('correo')?.touched">
+                                Correo <strong>invalido</strong>
+                            </span>
+                        </div>
+                        <!--Password-->
+                        <div class="col-md-6 mb-2">
+                            <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Contraseña">
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('password')?.hasError('required') && registrarForm.get('password')?.touched">
+                                La contraseña <strong>es requerida</strong>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="registrarForm.get('password')?.hasError('minlength') && registrarForm.get('password')?.touched">
+                                La contraseña como minimo <strong>debe tener 6 caracteres</strong>
+                            </span>
+                        </div>
+                        <!--Repetir/Password-->
+                        <div class="col-md-6 mb-2">
+                            <input type="password" formControlName="repetirPassword" class="form-control form-control-lg" placeholder="Repetir Contraseña">
+                            <span class="text-danger" *ngIf="registrarForm.hasError('notSame')" >
+                                Contraseña <strong>distintas</strong>
+                            </span>
+                        </div>
+                        <!-- Foto 1 - PERFIL -->
+                        <div class="col-md-6 input-group mb-3">
+                            <span class="input-group-text" >PERFIL</span>
+                            <input type="file" (change)="uploadImage($event)" class="form-control form-control-lg" formControlName="fotoPerfil">
+                        </div>
+                        <!-- Foto 2 - PERFIL -->
+                        <div class="col-md-6 input-group mb-3">
+                            <span class="input-group-text" >PERFIL</span>
+                            <input type="file" (change)="uploadImage2($event)" class="form-control form-control-lg" formControlName="fotoPerfil2">
+                        </div>
+                        <!--Captcha Vista-->
+                        <div class="col-md-6 input-group mb-3">
+                          <span class="input-group-text" >CAPTCHA</span>
+                          <input type="text" id="captchaVista" class="form-control form-control-lg" disabled [value]="captchaGenerado">
+                        </div>
+                        <!--Captcha-->
+                        <div class="col-md-6 mb-2">
+                          <input type="text" formControlName="captcha" class="form-control form-control-lg" placeholder="Escribir el Captcha que visualiza">
+                          <span class="text-danger"
+                          *ngIf="registrarForm.get('captcha')?.hasError('required') && registrarForm.get('captcha')?.touched">
+                              El Captcha  <strong>es requerido</strong>
+                          </span>
+
+                          <span class="text-danger"
+                          *ngIf="registrarForm.get('captcha')?.hasError('isCaptchaWithParam') && registrarForm.get('captcha')?.touched">
+                              Captcha <strong>deben ser iguales</strong>
+                          </span>
+                        </div>
+
+                    </div>
+                        <button routerLink="/auth/login" class="btn btn-secondary btn-lg">Volver</button>
+                        <button type="submit" [disabled]="registrarForm.invalid" class="btn btn-primary btn-lg float-right">Aceptar</button>
+                    </form>
+                <!-- </div> -->
+           <!--  </div> -->
+        <!--</div>-->
+    </div>
+</div>
+

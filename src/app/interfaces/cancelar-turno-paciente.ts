@@ -1,0 +1,33 @@
+export interface CancelarTurnoPaciente {
+  id:string;
+  fechaSolicitada:string;
+  emailPaciente:string;
+  estado:string;
+  canceladoComentario:string;
+  resena:string;
+  verResena:string;
+  encuesta:string;
+  atencion:string;
+  fechaFinalizado:string;
+  especialidad:string;
+  estadoEspecialista:string;
+  emailEspecialista:string;
+  apellidoPaciente:string;
+  nombrePaciente:string;
+  apellidoEspecialista:string;
+  nombreEspecialista:string;
+  fotoEspecialista:string;
+  fotoPerfilUnoPaciente:string;
+  fotoPerfilDosPaciente:string;
+  diagnostico:string;
+  altura:string;
+  peso:string;
+  temperatura:string;
+  presion:string;
+  clave1:string;
+  valor1:string;
+  clave2:string;
+  valor2:string;
+  clave3:string;
+  valor3:string;
+}

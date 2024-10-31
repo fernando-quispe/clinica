@@ -1,0 +1,65 @@
+<!-- <app-menu-gral></app-menu-gral>
+<br><br>-->
+<div class="conteiner mt-3">
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+
+    <h3 class="text-center p-3">Horarios Laborales</h3>
+    <div *ngIf='!loading' class="container-table table-responsive">
+      <!--<img [src]="'../../../'+fotoPerfilUno" alt="Especialista {{ nombre +' ' + apellido }}" />-->
+              <!--  {{ nombre + ' ' + apellido }} -->
+      <!-- <table class="table table-bordered table-striped mx-auto"> -->
+      <table class="table table-striped">
+        <thead class="thead-Active">
+          <tr class="table-dark">
+           <!--  <th scope="col">Apellido</th>
+            <th scope="col">Nombre</th> -->
+            <!-- <th scope="col">Especialista</th>-->
+            <th scope="col">Día</th>
+            <th scope="col">TURNO</th>
+            <th scope="col">Elegir horario laboral de la Especialidad</th>
+            <!--<th scope="col">Especialidad</th>
+            <th scope="col" *ngIf="this.otraespecialidad !=''">Otra Especialidad</th>
+            <th scope="col">Guardar Turno </th>
+            <th scope="col"*ngIf="this.otraespecialidad !=''">Guardar Turno</th>-->
+            <!-- <th scope="col"  style="visibility: hidden">Email</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-light" *ngFor="let item of arrayTurnosUnidos | ordenarArray:'dia' ">
+            <!-- <td>{{ item.apellido }} {{ item.nombre }}</td> -->
+            <td>{{ item.dia }}</td>
+            <td> {{ item.turno }}</td>
+           <!--<tr class="table-light" *ngFor="let item of listaTurno">
+            <td>{{ item.apellido }} {{ item.nombre }}</td>
+            <td>{{ item.dia }}</td>
+            <td> {{ item.turno }}</td>
+            <td>{{ item.especialidad }}</td>
+            <td *ngIf="item.otraespecialidad !=''">{{ item.otraespecialidad }}</td>
+            <td>
+              <button class="btn-success" *ngIf="item.especialidad !=''" (click)="habilitarEspecialidad(item)">Especialidad</button>
+            </td>
+            <td>
+              <button class="btn-danger"  *ngIf="item.otraespecialidad !=''" (click)="habilitarOtraEspecialidad(item)">Otra Especialidad</button>
+            </td> -->    
+            
+            <td>
+              <!-- Libre -->
+              <button class="btn-success" *ngIf="item.estado =='Libre'" (click)="habilitarEspecialidad(item)">{{ item.especialidad }}</button>
+              <button class="btn-success"  *ngIf="item.otraespecialidad !='' && item.estado =='Libre'" (click)="habilitarOtraEspecialidad(item)">{{ item.otraespecialidad }}</button>
+              <button class="btn-success active" *ngIf="item.estado =='Libre'">Libre</button>
+
+              <!-- Atiende -->
+              <button class="btn-success active" *ngIf="item.estado =='Atiende'" (click)="habilitarEspecialidad(item)">Atiende {{ item.especialidad }}</button>
+              <button class="btn-success" *ngIf="item.estado =='Atiende' " (click)="eliminarHorarioLaboral(item)">Liberar</button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
+    </div>
+</div>

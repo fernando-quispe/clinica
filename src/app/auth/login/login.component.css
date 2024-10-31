@@ -1,0 +1,142 @@
+html,
+body {
+  height: 600%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  /*background-color: #f5f5f5;*/
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.conteiner{
+  /*background: #b92b27;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to bottom, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to bottom, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url(../../../assets/clinica/clinica.jpg);
+  background-size: 85% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 86vh;
+}
+
+.parrafoPropio{
+  color: white;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tituloPropio{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.contenedorLogin{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:space-between;
+}
+
+.text-danger{
+  margin-left: 10px;
+}
+
+.container-form{
+  /* border: 2px solid rgb(204, 204, 204); */
+  border-radius: 20px;
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+img{
+  width: 140px;
+  height: 150px;
+  box-shadow: 0px 0px 5px #999;
+  padding: 10px;
+  margin:0px 10px;
+  border-radius: 50px;   /* Hace redondo la imagen */
+}
+
+img:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 6px rgb(0, 115, 255);
+}
+
+table{
+  text-align: center;
+  color: rgb(105, 105, 105);
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.container-table{
+  padding: 10px;
+}
+
+h3{
+    text-align: center;
+    color: rgb(245, 232, 232);
+}
+
+.container-table-login{
+  padding: 10px;
+  margin:0px auto;
+}
+
+.TituloTablaColor{
+  color: rgb(220, 25, 74);
+}
+
+section {
+  background-image: linear-gradient(to left,rgb(168, 200, 230),rgb(116, 214, 231));
+  height: 96vh;
+  /*
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-color: green;   */
+}

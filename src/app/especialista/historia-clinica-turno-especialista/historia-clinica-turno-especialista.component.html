@@ -1,0 +1,90 @@
+<div class="col" *ngIf='loading'>
+    <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">HISTORIA CLINICA - Turno {{datoRecibidoTurno}} -  Sr/a {{datoRecibidoPaciente}} -  {{datoRecibidoEspecialidad}}</h4>
+        </div>
+  
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+            <form class="needs-validation" [formGroup]="registrarForm" (ngSubmit)="registrarCancelar()">
+            <div class="row">
+                <!--  inputAltura -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Altura</span>
+                    <input type="text" class="form-control" formControlName="inputAltura" placeholder="Altura del Paciente">
+                    <span class="text-danger" *ngIf="registrarForm.get('inputAltura')?.hasError('required') && registrarForm.get('inputAltura')?.touched">
+                    El campo Altura <strong>es requerido</strong>
+                    </span>
+                </div><!-- Fin inputAltura-->
+
+                <!--  inputPeso -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Peso</span>
+                    <input type="text" class="form-control" formControlName="inputPeso" placeholder="Peso del  Paciente">
+                    <span class="text-danger" *ngIf="registrarForm.get('inputPeso')?.hasError('required') && registrarForm.get('inputPeso')?.touched">
+                    El campo Peso <strong>es requerido</strong>
+                    </span>
+                </div><!-- Fin inputPeso-->
+                
+                <!--  inputPresion -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Presión</span>
+                    <input type="text" class="form-control" formControlName="inputPresion" placeholder="Presión del Paciente">
+                    <span class="text-danger" *ngIf="registrarForm.get('inputPresion')?.hasError('required') && registrarForm.get('inputPresion')?.touched">
+                    El campo Presión <strong>es requerida</strong>
+                    </span>
+                </div><!-- Fin inputPresion-->
+                
+                <!--  inputTemperatura -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Temperatura </span>
+                    <input type="text" class="form-control" formControlName="inputTemperatura" placeholder="Temperatura del  Paciente">
+                    <span class="text-danger" *ngIf="registrarForm.get('inputTemperatura')?.hasError('required') && registrarForm.get('inputTemperatura')?.touched">
+                    El campo Temperatura <strong>es requerida</strong>
+                    </span>
+                </div><!-- Fin inputTemperatura-->
+              
+                <!--  inputClave1 -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Clave Personalizada </span>
+                    <input type="text" class="form-control" formControlName="inputClave1" placeholder="Clave personalizada">
+                </div><!-- Fin inputClave1-->
+                
+                <!--  inputValor1 -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Valor </span>
+                    <input type="text" class="form-control" formControlName="inputValor1" placeholder="Ingrese Valor para la clave personalizada">
+                </div><!-- Fin inputValor1-->
+                
+                <!--  inputClave2 -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Clave Personalizada </span>
+                    <input type="text" class="form-control" formControlName="inputClave2" placeholder="Clave personalizada">
+                </div><!-- Fin inputClave2-->
+                
+                <!--  inputValor2 -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Valor </span>
+                    <input type="text" class="form-control" formControlName="inputValor2" placeholder="Ingrese Valor para la clave personalizada">
+                </div><!-- Fin inputValor2-->
+                
+                <!--  inputClave3 -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Clave Personalizada </span>
+                    <input type="text" class="form-control" formControlName="inputClave3" placeholder="Clave personalizada">
+                </div><!-- Fin inputClave3-->
+              
+                <!--  inputValor3 -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Valor </span>
+                    <input type="text" class="form-control" formControlName="inputValor3" placeholder="Ingrese Valor para la clave personalizada">
+                </div><!-- Fin inputValor3-->
+    
+            </div>  <!-- Fin row-->
+            </form>
+            </ul>
+            <button type="submit" (click)="registrarHistoriaClinica()" [disabled]="registrarForm.invalid" class="btn btn-primary btn-lg " >Guardar</button>
+            <button (click)="limpiar()" class="btn btn-primary btn-lg float-right" >Limpiar</button>
+        </div>
+    </div>
+</div>

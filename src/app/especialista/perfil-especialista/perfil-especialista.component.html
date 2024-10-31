@@ -1,0 +1,55 @@
+<app-menu-gral></app-menu-gral>
+<div class="conteiner mt-3">
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br>
+    <div class="mx-auto container-info table-responsive text-center">
+        <h1>MI PERFIL</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody style="background-color:#042035;">
+                <tr>
+                  <td >
+                    <img [src]="'../../../'+foto1" alt="imagen de perfil" />
+                  </td>
+                  <td WIDTH="20%"><strong><font color=#ffffff;>Apellido</font></strong>
+                    <br><br><br>
+                    <font color=#ffffff;>{{ this.apellido }} </font>
+                  </td>
+                  <td></td>
+    
+                  <td WIDTH="20%"><strong><font color=#ffffff;>Nombre</font></strong>
+                    <br><br><br>
+                    <font color=#ffffff;>{{ this.nombre }} </font>
+                  </td>
+                  <td></td>
+    
+                  <td WIDTH="10%"><strong> <font color=#ffffff;>DNI</font>  </strong>
+                    <br><br><br>
+                    <font color=#ffffff;>{{ this.dni }} </font>
+                  </td>
+                  <td></td>
+    
+                  <td WIDTH="15%"><strong><font color=#ffffff;>Correo electrónico </font></strong>
+                    <br><br><br>
+                    <font color=#ffffff;>{{ this. correo }}</font>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+          <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
+        </div>
+    </div>
+    <app-crear-turnos></app-crear-turnos>
+    

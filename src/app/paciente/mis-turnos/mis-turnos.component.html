@@ -1,0 +1,80 @@
+<app-menu-gral></app-menu-gral>
+<div class="conteiner mt-3">
+
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br><br>
+    
+    <div>
+      <img [src]="'../../../'+this.fotoPerfilUnoPaciente" alt="{{ this.nombrePaciente +' ' + this.apellidoPaciente }}" />
+                 {{ this.nombrePaciente +' ' + this.apellidoPaciente }}
+    </div>
+    
+    <h3 class="text-center p-3">Mis Turnos</h3>
+
+    <!-- Filtro-->
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <input type="text" name="filterPos" class="form-control" placeholder="Buscador ... [ Especialidad o Especialista ]" [(ngModel)]="filterPost">
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf='!loading' class="container-table table-responsive">
+      <!-- <table class="table table-bordered table-striped mx-auto"> -->
+      <table class="table table-striped">
+        <thead class="thead-Active">
+          <tr class="table-dark">
+            <th scope="col">Foto Especialista</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Estado</th>
+            <th scope="col">ACCIÓN</th>
+            <!--<th scope="col">ACCIÓN CALIFICAR</th>-->
+            <!--<th scope="col">Especialidad</th> -->
+            <!--<th scope="col">Cuenta</th> -->
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="table-light" *ngFor="let item of listaTurnoPaciente  | filter:filterPost" >
+            <td>
+              <img [src]="'../../../'+item.fotoEspecialista" alt="Especialista {{ item.nombreEspecialista
+                +' ' + item.apellidoEspecialista }}" />
+              {{ item.nombreEspecialista +' ' + item.apellidoEspecialista }}
+           </td>
+           <!--  <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td> -->
+            <td>{{ item.especialidad }}</td>
+            <td>{{ item.fechaSolicitada }}</td>
+            <td>{{ item.estado }}</td>
+            <!--<td>{{ item.especialidad }}</td>-->
+            <!-- <td>{{ item.fechaAlta }}</td> -->
+            <!-- <div class="scrollbar-especialidades">-->
+
+            <td>
+                <button class="btn-danger"  *ngIf="item.estado=='PENDIENTE'  " (click)="cancelarTurno(item)">CANCELAR</button>
+                <button class="btn-success" *ngIf="item.estado=='FINALIZADO' && item.atencion=='' " (click)="calificarAtencion(item)">CALIFICAR</button>
+                <button class="btn-success" *ngIf="item.resena!='' " (click)="verResena(item)">VER RESEÑA</button>
+                <button class="btn-success" *ngIf="item.estado=='FINALIZADO' && item.resena!='' && item.encuesta==''" (click)="encuesta(item)">ENCUESTA</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
+    </div>
+    <br><br><br>
+    <div >
+      <app-cancelar-turno *ngIf="activarCancelar" [actualDetalleTurno]="actualTurno"></app-cancelar-turno>
+      <app-calificar-turno *ngIf="activarCalificacion" [actualDetalleTurno]="actualTurno"></app-calificar-turno>
+      <app-resena-turno *ngIf="activarVerResena" [actualDetalleTurno]="actualTurno"></app-resena-turno>
+      <app-encuesta-turno *ngIf="activarEncuesta" [actualDetalleTurno]="actualTurno"></app-encuesta-turno>
+    </div>
+</div>
+  
+  

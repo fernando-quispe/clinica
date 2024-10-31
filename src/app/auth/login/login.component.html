@@ -1,0 +1,138 @@
+<section>
+<div class="conteiner mt-3">
+    
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+
+    <div *ngIf='!loading' class="row">
+      <div class="container-table-login ">
+        <div class="card">
+          <div class="card-body">
+            <div class="container-form">
+              <div>
+                <h2 class="text-center tituloPropio">LOGIN</h2>
+              </div>
+              <!-- <div>
+                <img src="../../../../assets/login/login3.svg" alt="Login" width="100" height="100">
+              </div> -->
+            </div>
+            <form [formGroup]='loginForm' (ngSubmit)="loginSiguiente()">
+              <div class="mb-3">
+                <input type="text" formControlName="usuarioCorreo" class="from-control form-control-lg" placeholder="Correo electrónico" [value]="muestroCorreo">
+                <br>
+                <span class="text-danger"
+                *ngIf="loginForm.get('usuarioCorreo')?.hasError('required') && loginForm.get('usuarioCorreo')?.touched">
+                  El correo  electrónico<strong>es requerido</strong>
+                </span>
+                <span class="text-danger" *ngIf="loginForm.get('usuarioCorreo')?.hasError('email') && loginForm.get('usuarioCorreo')?.touched">
+                  El correo electrónico<strong>es inválido</strong>
+                </span>
+              </div>
+              <div class="mb-3">
+                <input type="password" formControlName="usuarioClave"  class="from-control form-control-lg" placeholder="Contraseña" [value]="muestroClave">
+                <br>
+                <span class="text-danger"
+                *ngIf="loginForm.get('usuarioClave')?.hasError('required') && loginForm.get('usuarioClave')?.touched">
+                La contraseña  <strong>es requerido</strong>
+                </span>
+              </div>
+              <div>
+                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-lg">Aceptar</button>
+                <button type="button" routerLink="/auth/MenuRegistrar" class="btn btn-primary btn-lg float-right" (click)="registrarse()">Registrarse</button>
+                <!-- <button type="button" (click)=automaticoLogin() class="btn btn-primary btn-lg float-right">Login (in)</button> -->
+              </div>
+              <br>
+              <!-- <div class = "text-center" >
+                <button type="button" class="btn btn-primary " (click)=adinistradorLogin() >Administrador (in)</button>
+              </div> -->
+            </form>
+            <br>
+            <!-- <div class="text-center">
+              <a routerLink="/auth/registrar">Registrarse</a>
+              <br>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+       <!-- Accesos rapidos -->
+
+       <div class="container-table table-responsive">
+        <h3 class="text-center">ACCESOS</h3>
+        <table class="mx-auto">
+         <!--  <thead class="TituloTablaColor">
+            <tr>
+              <th>ADMIN</th>
+              <th>ESPECIALISTA</th>
+              <th>ESPECIALISTA</th>
+              <th>PACIENTE</th>
+              <th>PACIENTE</th>
+              <th>PACIENTE</th>
+            </tr>
+          </thead> -->
+          <tbody>
+            <tr>
+              <th colspan="3"><font color ="#ffffff">Pacientes</font></th>
+              <th colspan="2"><font color ="#ffffff">Especialistas</font></th>
+              <th><font color ="#ffffff">Administrador</font></th>
+            </tr>
+            <tr>
+              <!--Pacientes-->
+              <td>
+                <img
+                  src="./../../../assets/pacientes/paciente01.jpg"
+                  alt="img-usuario"
+                  (click)="onPaciente1()"
+                  alt="paciente"
+                />
+              </td>
+              <td>
+                <img
+                  src="./../../../assets/pacientes/paciente03.jpg"
+                  alt="img-usuario"
+                  (click)="onPaciente2()"
+                  alt="paciente"
+                />
+              </td>
+              <td>
+                <img
+                  src="./../../../assets/pacientes/paciente05.jpg"
+                  alt="img-usuario"
+                  (click)="onPaciente3()"
+                  alt="paciente"
+                />
+              </td>
+              <!--Especialistas-->
+              <td>
+                <img
+                  src="./../../../assets/especialistas/especialista01.jpg"
+                  alt="img-usuario"
+                  (click)="onEspecialista1()"
+                  alt="especialista"
+                />
+              </td>
+              <td>
+                <img
+                  src="./../../../assets/especialistas/especialista02.jpg"
+                  alt="img-usuario"
+                  (click)="onEspecialista2()"
+                  alt="especialista"
+                />
+              </td>
+              <!--Administrador-->
+              <td>
+                <img
+                  src="./../../../assets/admin/admin1.jpeg"
+                  alt="img-usuario"
+                  (click)="onAdmin1()"
+                  alt="admin"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+</section>

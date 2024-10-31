@@ -1,0 +1,112 @@
+<app-menu-gral></app-menu-gral>
+<div class="conteiner">
+  <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+  </div>
+  <br><br><br><br><br><br>
+  <div *ngIf='!loading' class="col-md-12 mb-2">
+    <!-- <div class="col-lg-10 offset-lg-3"> -->
+        <!-- <div class="card"> -->
+            <!-- <div class=" ody"> -->
+                <h2 class="text-center tituloPropio" >REGISTRO DE ADMINISTRADOR</h2>
+                <form [formGroup]="registrarForm" (ngSubmit)="registrar()">
+                <div class="row formulario">
+                    <!--Nombre-->
+                    <div class="col-md-6 mb-2">
+                        <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Nombre">
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('nombre')?.hasError('required') && registrarForm.get('nombre')?.touched">
+                            El Nombre <strong>es requerido</strong>
+                        </span>
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('nombre')?.hasError('minlength') && registrarForm.get('nombre')?.touched">
+                            Nombre como mínimo <strong>debe tener 4 caracteres</strong>
+                        </span>
+                    </div>
+                    <!--Apellido-->
+                    <div class="col-md-6 mb-2">
+                        <input type="text" formControlName="apellido" class="form-control form-control-lg" placeholder="Apellido">
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('apellido')?.hasError('required') && registrarForm.get('apellido')?.touched">
+                            El Apellido <strong>es requerido</strong>
+                        </span>
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('apellido')?.hasError('minlength') && registrarForm.get('apellido')?.touched">
+                            El Apellido como mínimo <strong>debe tener 4 caracteres</strong>
+                        </span>
+                    </div>
+                    <!--Edad-->
+                    <div class="col-md-6 mb-2">
+                        <input type="number" formControlName="edad" class="form-control form-control-lg" placeholder="Edad">
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('edad')?.hasError('required') && registrarForm.get('edad')?.touched">
+                            La Edad <strong>es requerida</strong>
+                        </span>
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('edad')?.hasError('minlength') && registrarForm.get('edad')?.touched">
+                            La Edad como mínimo <strong>debe tener 22 años</strong>
+                        </span>
+                    </div>
+                    <!--DNI-->
+                    <div class="col-md-6 mb-2">
+                        <input type="number" formControlName="dni" class="form-control form-control-lg" placeholder="DNI">
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('dni')?.hasError('required') && registrarForm.get('dni')?.touched">
+                            El DNI <strong>es requerido</strong>
+                        </span>
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('dni')?.hasError('minlength') && registrarForm.get('dni')?.touched">
+                            El DNI como mínimo <strong>debe tener 6 dígitos</strong>
+                        </span>
+                    </div>
+                    <!--Usuario/correo-->
+                    <div class="col-md-6 mb-2">
+                        <input type="email" formControlName="correo" class="form-control form-control-lg" placeholder="Correo">
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('correo')?.hasError('required') && registrarForm.get('correo')?.touched">
+                            El correo electrónico<strong>es requerido</strong>
+                        </span>
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('correo')?.hasError('email') && registrarForm.get('correo')?.touched">
+                        El correo electrónico<strong>es inválido</strong>
+                        </span>
+                    </div>
+                    <!-- Foto 1 - PERFIL -->
+                    <div class="col-md-6 input-group mb-3">
+                      <span class="input-group-text" >PERFIL</span>
+                      <input type="file" (change)="uploadImage($event)" class="form-control form-control-lg" formControlName="fotoPerfil">
+                      <span class="text-danger"
+                        *ngIf="registrarForm.get('fotoPerfil')?.hasError('required') && registrarForm.get('fotoPerfil')?.touched">
+                            La Foto del Perfil <strong>es requerida</strong>
+                        </span>
+                    </div>
+                    <!--Password-->
+                    <div class="col-md-6 mb-2">
+                        <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Contraseña">
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('password')?.hasError('required') && registrarForm.get('password')?.touched">
+                            La contraseña <strong>es requerida</strong>
+                        </span>
+                        <span class="text-danger"
+                        *ngIf="registrarForm.get('password')?.hasError('minlength') && registrarForm.get('password')?.touched">
+                            La contraseña como mínimo <strong>debe tener 6 caracteres</strong>
+                        </span>
+                    </div>
+                    <!--Repetir/Password-->
+                    <div class="col-md-6 mb-2">
+                        <input type="password" formControlName="repetirPassword" class="form-control form-control-lg" placeholder="Repetir Contraseña">
+                        <span class="text-danger" *ngIf="registrarForm.hasError('notSame')" >
+                            Las Contraseñas <strong>son distintas</strong>
+                        </span>
+                    </div>
+
+                </div>
+                    <!--<button routerLink="/auth/login" class="btn btn-secondary btn-lg">Volver</button>  cambie 27 10  -->
+                    <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
+                    <button type="submit" [disabled]="registrarForm.invalid" class="btn btn-primary btn-lg float-right">Aceptar</button>
+                </form>
+            <!-- </div> -->
+       <!--  </div> -->
+    <!--</div>-->
+</div>
+</div>

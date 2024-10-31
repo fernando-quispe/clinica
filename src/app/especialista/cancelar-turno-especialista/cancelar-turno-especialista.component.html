@@ -1,0 +1,27 @@
+<div class="col" *ngIf='loading'>
+    <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">CANCELAR - Turno {{datoRecibidoTurno}} -  Sr/a {{datoRecibidoPaciente}} -  {{datoRecibidoEspecialidad}}</h4>
+        </div>
+  
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+            <form class="needs-validation" [formGroup]="registrarForm" (ngSubmit)="registrarCancelar()">
+            <div class="row">
+                <!--  inputCancela -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" >Escribir texto </span>
+                    <input type="text" class="form-control" formControlName="inputCancela" placeholder="Motivo por el cuál cancela su turno">
+                    <span class="text-danger" *ngIf="registrarForm.get('inputCancela')?.hasError('required') && registrarForm.get('inputCancela')?.touched">
+                    El campo cancelar <strong>es requerido</strong>
+                    </span>  
+                </div><!-- Fin inputCancela-->  
+            </div>  <!-- Fin row-->
+            </form>
+            </ul>
+            <button type="submit" (click)="registrarCancelar()" [disabled]="registrarForm.invalid" class="btn btn-primary btn-lg " >Guardar</button>
+            <button (click)="limpiar()" class="btn btn-primary btn-lg float-right" >Limpiar</button>
+        </div>
+        
+    </div>
+</div>  

@@ -1,0 +1,38 @@
+.container {
+    background-image: url('../../assets/clinica/clinica29.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*height: 85vh;*/
+    width: 1000px; /* Ancho deseado */
+    height: 650px; /* Alto deseado */   
+}
+
+/*
+.conteiner{
+    background-image: url('../../assets/clinica/clinica29.png');    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    max-width: 90% auto;
+    padding: 5px;
+}*/
+
+section {
+    background-image: linear-gradient(to left,rgb(168, 200, 230),rgb(116, 214, 231));
+    height: 100vh;
+    /*height:auto;*/
+}
+
+.TituloColor{
+    color: rgb(239, 236, 236);
+}

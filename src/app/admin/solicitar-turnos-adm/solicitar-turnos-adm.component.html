@@ -1,0 +1,72 @@
+<app-menu-gral></app-menu-gral>
+<!-- <div class="conteiner"> -->
+<div class="p-4 p-md-8 mb-4 rounded" id="contenedor-absoluto">
+    <div class="row" id="main-row" hidden>
+    
+        <div class="col-md-4" id="col1">
+            <h1 class="display-4 fst-italic" id="titulo-principal">Solicitar turno</h1>
+            <div class="col-md-25" id="listado-turnos">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <input class="datos-turno" readonly placeholder="Su usuario" [(ngModel)]="usuarioPacienteMailIngresado">
+                    <input class="datos-turno" readonly placeholder="Elija especialidad" [(ngModel)]="especialidadIngresada">
+                    <input class="datos-turno" readonly placeholder="Elija especialista" [(ngModel)]="especialistaIngresado">
+                    <input class="datos-turno" readonly placeholder="Elija fecha" [(ngModel)]="fechaIngresada">
+                    <ul id="opciones-turnos" hidden>
+                        <li *ngFor="let turno of arrayTurnos; index as i" class="item-turno" (click)="turnoClickeado(turno)">{{arrayTurnos[i]}}</li>
+                    </ul>
+                    <button id="btn-solicitar-turno" (click)="solicitarTurno()">Tomar turno</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" id="col2">
+            <h1 class="display-4 fst-italic" id="titulo-principal3">Elija paciente</h1>
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <ul id="opciones-especialistas">
+                        <li *ngFor="let item of listaUsuarioPaciente" class="item-especialista" (click)="pacienteElegido(item)">
+                            <img class="foto-especialista" [src]="'../../../'+item.fotoPerfilUno">
+                            <br>
+                            <label>{{ item.nombre +' ' + item.apellido }}</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" id="col3">
+            <h1 class="display-4 fst-italic" id="titulo-principal2">Elija especialidad</h1>
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static ">
+                    <!-- <app-listado-especialidades (especialidadClickeada)="especialidadElegida($event)"></app-listado-especialidades> -->
+                    <ul id="opciones-especialidades" >
+                    <li *ngFor="let especialidad of arrayEspecialidades" class="item-especialidad" (click)="especialidadElegida(especialidad)">
+                        <img *ngIf="especialidad == 'Anestesiología'" class="foto-especialidad" src="../../../../../assets/especialidades/anestesiologia.jpg">
+                        <img *ngIf="especialidad == 'Ginecologia'" class="foto-especialidad" src="../../../../../assets/especialidades/ginecologia.jpg">
+                        <img *ngIf="especialidad == 'Obstetricia'" class="foto-especialidad" src="../../../../../assets/especialidades/obstetricia.jpg">
+                        <img *ngIf="especialidad != 'Anestesiología' && especialidad != 'Ginecologia' && especialidad != 'Obstetricia'" class="foto-especialidad" src="../../../../../assets/especialidades/especialidades.png">
+                       <!--  <label>{{especialidad}}</label> -->
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" id="col4">
+            <h1 class="display-4 fst-italic" id="titulo-principal3">Elija especialista</h1>
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <ul id="opciones-especialistas">
+                        <li *ngFor="let especialista of arrayEspecialistasFiltrado" class="item-especialista" (click)="especialistaElegido(especialista)">
+                            <img class="foto-especialista" src="{{especialista.fotoPerfilUno}}">
+                            <br>
+                            <label>Dr/Dra. {{especialista.nombre + " " + especialista.apellido}}</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- </div> -->
