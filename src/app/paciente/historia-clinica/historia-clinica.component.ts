@@ -20,6 +20,7 @@ export class HistoriaClinicaComponent implements OnInit {
   suscriptionList: Subscription = new Subscription();
   verHistoriaClinicaEsp:boolean = false;
   loading = false;
+  
 
   actualTurno: CancelarTurnoPaciente;
 

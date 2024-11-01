@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "tp2clinica"
-  }
+    "default": "tp2clinica",
+    "clinica": "tp2clinica"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

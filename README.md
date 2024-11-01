@@ -1,27 +1,38 @@
-# Clinica
+# :hospital: Clínica Online
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+La clínica online es un sistemas por el cual los usuarios (Administradores, Especialistas y Pacientes) 
+pueden acceder a sacar turnos, ver sus horarios, visualizar el historial clínico, entre otras opciones.
 
-## Development server
+[Clinica Online](https://tp2clinica.web.app/#/bienvenidoLogin)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Pantallas de la aplicación
 
-## Code scaffolding
+### :hospital: Página de bienvenida
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![alt text](./pantallas/bienvenida.jpg)
 
-## Build
+### :hospital: Registro
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+En esta sección el usuario puede registrarse como paciente o especialista.
 
-## Running unit tests
+![alt text](./pantallas/registro.jpg)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Luego de completar los datos les llegara un correo electrónico para completar la registración y acceder al sistema si es paciente, en el caso de ser especialista tendrá que esperar a que un administrador los habilite.
 
-## Running end-to-end tests
+![alt text](./pantallas/registrocompletar.jpg)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### :hospital: Login
 
-## Further help
+Completando los datos los usuarios pueden acceder al sistema para realizar lo que tengan habilitado según su nivel.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![alt text](./pantallas/login.jpg)
+
+Al acceder un paciente, por ejemplo, puede ver su historial.
+
+![alt text](./pantallas/acceso.jpg)
+
+### :hospital: Turnos
+
+Los usuarios pueden sacar turnos de acuerdo a los especialistas que se encuentran habilitados en la clínica.
+
+![alt text](./pantallas/turnos.jpg)
