@@ -18,15 +18,18 @@ import { HistoriaClinicaTurnoEspecialistaComponent } from '../../especialista/hi
 import { ResEspecialistaComponent } from '../../especialista/res-especialista/res-especialista.component';
 import { FilterEspecialistaPipe } from '../../shared/pipes/filter-especialista.pipe';
 import { OrdenarArrayPipe } from '../../shared/pipes/ordenar-array.pipe';
+import { TurnosclinicaService } from '../../servicios/turnosclinica.service';
+import { FilterTurnoclinicaPipe } from '../../shared/pipes/filter-turnoclinica.pipe';
 
 @Component({
   selector: 'app-turnosclinica',
   standalone: true,
   imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, FormsModule, CancelarTurnoEspecialistaComponent, FinalizarTurnoEspecialistaComponent,
-            HistoriaClinicaTurnoEspecialistaComponent, ResEspecialistaComponent, FilterEspecialistaPipe, OrdenarArrayPipe],
+            HistoriaClinicaTurnoEspecialistaComponent, ResEspecialistaComponent, FilterEspecialistaPipe, OrdenarArrayPipe, FilterTurnoclinicaPipe],
   templateUrl: './turnosclinica.component.html',
   styleUrl: './turnosclinica.component.css'
 })
+
 export class TurnosclinicaComponent implements OnInit{
 
   public listaTurnoPaciente: TurnoPaciente[] = [];
@@ -67,10 +70,19 @@ export class TurnosclinicaComponent implements OnInit{
   //Filtro
   filterPost='';
 
+  //nuevo 0711
+  turnos: any[] = [];
+  //loading = true; 
+ 
+  filtroNombre='';
+  filtroEspecialidad= '';
+
   constructor(
     private _usuarioService:UsuarioService,
     private _turnopacienteService: PacienteService, // LO AGREGUE 26 10 
-    private router: Router) 
+    private router: Router,
+  
+    private turnosclinicaService: TurnosclinicaService) 
     { 
   }
 
@@ -78,6 +90,11 @@ export class TurnosclinicaComponent implements OnInit{
     this.obtener_localstorage();
     this.getList();
     this.getListaEspecialistas();
+    //nuevo 0711
+    this.turnosclinicaService.getIngresos().subscribe(data => {
+      this.turnos = data;
+      this.loading = false;
+    });
   }
 
   ngOnDestroy(): void {
@@ -94,6 +111,7 @@ export class TurnosclinicaComponent implements OnInit{
     this.fotoPerfilDosPaciente=datoPerfil.fotoPerfilDos;
     this.dniPaciente=datoPerfil.dni;
     //console.log('Email del Paciente --> ', this.emailEspecialista);
+    
   }
 
   /*ES OK-- getList() {
@@ -112,7 +130,7 @@ export class TurnosclinicaComponent implements OnInit{
     })
   }*/
 
-    //agregue
+  //agregue
   getListaEspecialistas() {
     return this._usuarioService.getEspecialidades().pipe(map(data => {
         return data.map((element: any) => ({
@@ -120,11 +138,11 @@ export class TurnosclinicaComponent implements OnInit{
             ...element.payload.doc.data()
         }));
     }));
-}
+  }
 
-getList() {
-  // Obtener la lista de especialistas
-  this._usuarioService.getListaEspecialistas().subscribe(especialistasData => {
+  getList() {
+    // Obtener la lista de especialistas
+     this._usuarioService.getListaEspecialistas().subscribe(especialistasData => {
       this.especialistas = especialistasData;
 
       // Luego, obtener los turnos de cada especialista
@@ -140,8 +158,8 @@ getList() {
           });
       });
       console.log("Lista de Turnos: ", this.listaTurnoPacientes);
-  });
-}
+    });
+  }
 
   cancelarTurno(item: any) {
     this.activarCancelar=true;
@@ -178,5 +196,12 @@ getList() {
   volver() {
     //localStorage.removeItem('loggedUser');
     this.router.navigateByUrl('/bienvenido')
+  }
+
+  turnosFiltrados() {
+    return this.turnos.filter(turno =>
+      (this.filtroNombre ? turno.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase()) : true) &&
+      (this.filtroEspecialidad ? turno.especialidad.toLowerCase().includes(this.filtroEspecialidad.toLowerCase()) : true)
+    );
   }
 }
