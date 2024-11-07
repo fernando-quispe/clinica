@@ -30,7 +30,7 @@
   
   .tituloPropio{
     font-family: cursive;   
-    margin: 100px;
+    margin: 40px; /*ver de cambiarpara acomodar el titulo*/
   }
   /* .contenedorLogin{
     display: flex;
