@@ -25,7 +25,7 @@
       <table class="table table-striped">
         <thead class="thead-Active">
           <tr class="table-dark">
-            <th scope="col">Info</th> <!--agregue 28 10 -->
+            <!--<th scope="col">Info</th> agregue 28 10 -->
             <th scope="col">Paciente</th>
             <th scope="col">Especialidad</th>
             <th scope="col">Fecha</th>
@@ -39,9 +39,9 @@
         </thead>
         <tbody>
           <!--<tr class="table-light" *ngFor="let item of listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada'" > inicial-->
-          <tr class="table-light" *ngFor="let item of listaTurnoPaciente" >{{listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada'  }}
-            <!--<tr class="table-light" *ngFor="let item of (listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada')" >-->
-            <!--<tr class="table-light" *ngFor="let item of listaTurnoPaciente" >-->
+          <!--<tr class="table-light" *ngFor="let item of listaTurnoPaciente" >{{listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada'}}FUNCIONA-->
+          <!--<tr class="table-light" *ngFor="let item of listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada'" >-->
+           <tr class="table-light" *ngFor="let item of listaTurnoPaciente | filterEspecialista:filterPost">
             
             <!--  <td>
               <img [src]="'../../../'+ item.fotoPerfilUnoPaciente" alt="Especialista {{ item.nombrePaciente +' ' + item.apellidoPaciente }}"/>
@@ -53,11 +53,9 @@
               {{ item.nombrePaciente +' ' + item.apellidoPaciente }}
             </td> 
 
-
-
            <!--  <td>{{ item.nombre }}</td>
             <td>{{ item.apellido }}</td> -->
-            <td>{{ item?.especialidad }}</td>
+            <td>{{ item.especialidad }}</td>
             <td>{{ item.fechaSolicitada }}</td>
             <td>{{ item.estado }}</td>
             <!--<td>{{ item.especialidad }}</td>-->

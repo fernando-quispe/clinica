@@ -1,6 +1,6 @@
 # :hospital: Clínica Online
 
-La clínica online es un sistemas por el cual los usuarios (Administradores, Especialistas y Pacientes) 
+La clínica online es un sistema por el cual los usuarios (Administradores, Especialistas y Pacientes) 
 pueden acceder a sacar turnos, ver sus horarios, visualizar el historial clínico, entre otras opciones.
 
 [Clinica Online](https://tp2clinica.web.app/#/bienvenidoLogin)

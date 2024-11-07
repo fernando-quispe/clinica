@@ -12,6 +12,8 @@ import { ToastrService } from 'ngx-toastr';
 import { User } from '../../interfaces/user';
 import { SpinnerComponent } from '../../shared/spinner/spinner.component';
 import { NgIf } from '@angular/common';
+import { AuthService } from '../../servicios/auth.service';
+import { LogService } from '../../servicios/log.service';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +36,8 @@ export class LoginComponent implements OnInit {
   email: string;
   perfil: string;
   perfil2: string;
+  //agregue
+  password: string;
 
   constructor(private rutas:Router,
               private fb: FormBuilder,
@@ -41,7 +45,10 @@ export class LoginComponent implements OnInit {
               private _errorService: ErrorService,
               private toastr: ToastrService,
               private unUsuario: UsuarioService,
-              private af: AngularFirestore
+              private af: AngularFirestore,
+
+              private authService: AuthService,
+              private logService: LogService
   ){
     this.loginForm = this.fb.group({
       usuarioCorreo: ['',[Validators.required,Validators.email]],
@@ -50,6 +57,13 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  login(userId: string) {
+    this.authService.login(userId, this.email).then(() => {
+      //this.logService.logUserAccess(userId, 'Ingreso al sistema');
+      this.logService.logUserAccess(userId);
+    });
   }
 
   /* automaticoLogin(){
@@ -66,12 +80,44 @@ export class LoginComponent implements OnInit {
       console.log('Entramos en loginSiguiente ',this.loginForm)
       const usuario = this.loginForm.get('usuarioCorreo')?.value;
       const password = this.loginForm.get('usuarioClave')?.value;
+
+      //0511
+      const fechaActual = new Date();
+      const fecha = fechaActual.toLocaleDateString(); // Ejemplo: '01/01/2024'
+      const hora = fechaActual.toLocaleTimeString();  // Ejemplo: '10:30:15 AM'
+      
       this.loading = true;
       setTimeout(() => {
         console.log('Tiempo');
       }, 500000);
+      
       this.afAuth.signInWithEmailAndPassword(usuario,password).then((respuesta) => {
         console.log("Respuesta ",respuesta);
+       //inicio 03 10
+        // Obtenemos la fecha y hora del ingreso
+   /*0511 const ingresoData = {
+      email: usuario,
+      timestamp: new Date(),
+      uid: respuesta.user?.uid
+    };*/
+      
+    //0511
+    const ingresoData = {
+      email: usuario,
+      fecha: fecha,
+      hora: hora
+    };
+
+    // Guardamos el ingreso en Firestore
+    this.af.collection('ingresos').add(ingresoData)
+      .then(() => {
+        console.log('Ingreso guardado en Firestore');
+      })
+      .catch(error => {
+        console.error('Error al guardar ingreso en Firestore: ', error);
+      });
+      //fin
+
         if (respuesta.user?.emailVerified === false) {
           this.loading = false;
           this.rutas.navigate(['/auth/verificarCorreo']);
@@ -82,6 +128,18 @@ export class LoginComponent implements OnInit {
           this.setLocalStorage(respuesta.user);
           this.setLocalStoragePerfil();
           this.rutas.navigate(['/bienvenido']);
+          //agregue  03 10
+          //this.logService.logUserAccess(this.authService.email);
+          //agregue 03 10
+         //this.logLogin(this.email);
+           //agregue 03 10 
+         //let fecha=new Date();
+          //this.af.collection('ingresos').add({
+          //  email: this.email,
+          //  fechaacceso:  fecha.getDate() + '-' + (fecha.getMonth()+1) +  '-' +fecha.getFullYear(),
+          //  dato: 'Ingreso al sistema'
+          //})
+
         }
       }, error => {
         this.loading = false;
@@ -90,6 +148,17 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  /*logLogin(email: any) {
+    throw new Error('Method not implemented.');
+  }*/
+
+  //agregue 
+  private logLogin(email: string) {
+    this.af.collection('ingresos').add({
+      email: email,
+      timestamp: new Date()
+    });
+  }
   setLocalStorage(user: any){
     const usuario: User = {
       uid: user.uid,
@@ -180,4 +249,6 @@ export class LoginComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     // no hay dato que se modifique
   }
+
+
 }

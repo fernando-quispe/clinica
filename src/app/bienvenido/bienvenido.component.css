@@ -1,16 +1,16 @@
 .container {
-    background-image: url('../../assets/clinica/clinica29.png');
-    background-size: cover;
-    background-position: center;
+    background-image: url('../../assets/clinica/clinica03.jpg');   
+    background-size: 100%;
+    /*background-position: center top;*/
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /*height: 85vh;*/
-    width: 1000px; /* Ancho deseado */
-    height: 650px; /* Alto deseado */   
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;
+    align-items: center;*/
+    height: 100vh;
+    max-width: 3000px;
 }
+
 
 /*
 .conteiner{

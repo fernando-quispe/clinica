@@ -21,7 +21,7 @@ import { FilterPipe } from "../../shared/pipes/filter.pipe";
   selector: 'app-mis-turnos',
   standalone: true,
   imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, FormsModule, CancelarTurnoComponent, CalificarTurnoComponent,
-    ResenaTurnoComponent, EncuestaTurnoComponent, CommonModule, FilterPipe],
+            ResenaTurnoComponent, EncuestaTurnoComponent, CommonModule, FilterPipe],
   templateUrl: './mis-turnos.component.html',
   styleUrl: './mis-turnos.component.css'
 })

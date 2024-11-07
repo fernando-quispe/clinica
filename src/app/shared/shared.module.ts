@@ -8,6 +8,7 @@ import { MenuInicioComponent } from './menu-inicio/menu-inicio.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterEspecialistaPipe } from './pipes/filter-especialista.pipe';
 import { OrdenarArrayPipe } from './pipes/ordenar-array.pipe';
+import { CustomDatePipe } from './pipes/custom-date.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { OrdenarArrayPipe } from './pipes/ordenar-array.pipe';
     MenuInicioComponent,
     FilterPipe, 
     FilterEspecialistaPipe, 
-    OrdenarArrayPipe
+    OrdenarArrayPipe,
+    CustomDatePipe
   ],
 
   imports: [
@@ -40,7 +42,8 @@ import { OrdenarArrayPipe } from './pipes/ordenar-array.pipe';
     MenuInicioComponent,
     FilterPipe, 
     FilterEspecialistaPipe, 
-    OrdenarArrayPipe
+    OrdenarArrayPipe,
+    CustomDatePipe
   ]
 })
 

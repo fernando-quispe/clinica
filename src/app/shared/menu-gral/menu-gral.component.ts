@@ -134,6 +134,19 @@ export class MenuGralComponent implements OnInit {
   Perfil(){
     this.rutas.navigate(['admin/perfilAdm']);
   }
+
+  turnosclinica(){
+    this.rutas.navigate(['admin/turnosclinica']);
+  }
+
+  logreporte(){
+    this.rutas.navigate(['admin/logReporte']);
+  }
+
+  ingresos(){
+    this.rutas.navigate(['admin/ingresos']);
+  }
+
   
   //lo agregue pero no funciona
   /*async Perfil(){        

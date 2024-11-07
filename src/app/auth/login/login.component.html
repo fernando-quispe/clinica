@@ -6,7 +6,7 @@
     </div>
 
     <div *ngIf='!loading' class="row">
-      <div class="container-table-login ">
+      <div class="container-table-login">
         <div class="card">
           <div class="card-body">
             <div class="container-form">
@@ -18,6 +18,8 @@
               </div> -->
             </div>
             <form [formGroup]='loginForm' (ngSubmit)="loginSiguiente()">
+
+              <!--Correo electronico-->  
               <div class="mb-3">
                 <input type="text" formControlName="usuarioCorreo" class="from-control form-control-lg" placeholder="Correo electrónico" [value]="muestroCorreo">
                 <br>
@@ -29,6 +31,8 @@
                   El correo electrónico<strong>es inválido</strong>
                 </span>
               </div>
+
+              <!--Constraseña-->    
               <div class="mb-3">
                 <input type="password" formControlName="usuarioClave"  class="from-control form-control-lg" placeholder="Contraseña" [value]="muestroClave">
                 <br>
@@ -37,6 +41,8 @@
                 La contraseña  <strong>es requerido</strong>
                 </span>
               </div>
+              
+              <!--Botones-->  
               <div>
                 <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-lg">Aceptar</button>
                 <button type="button" routerLink="/auth/MenuRegistrar" class="btn btn-primary btn-lg float-right" (click)="registrarse()">Registrarse</button>
@@ -59,7 +65,7 @@
        <!-- Accesos rapidos -->
 
        <div class="container-table table-responsive">
-        <h3 class="text-center">ACCESOS</h3>
+        <h3 class="text-center tituloPropio">ACCESOS</h3>
         <table class="mx-auto">
          <!--  <thead class="TituloTablaColor">
             <tr>
@@ -73,9 +79,9 @@
           </thead> -->
           <tbody>
             <tr>
-              <th colspan="3"><font color ="#ffffff">Pacientes</font></th>
-              <th colspan="2"><font color ="#ffffff">Especialistas</font></th>
-              <th><font color ="#ffffff">Administrador</font></th>
+              <th class="tituloPropio" colspan="3"><font color ="#ffffff">Pacientes</font></th>
+              <th class="tituloPropio" colspan="2"><font color ="#ffffff">Especialistas</font></th>
+              <th class="tituloPropio"><font color ="#ffffff">Administrador</font></th>
             </tr>
             <tr>
               <!--Pacientes-->

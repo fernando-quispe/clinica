@@ -52,7 +52,7 @@ export class CancelarTurnoComponent implements OnInit {
      Swal.fire({
        position: 'top-end',
        icon: 'success',
-       title: 'Su Turno fue Calificados con exito!',
+       title: 'Su Turno fue Calificado con exito!',
        showConfirmButton: false,
        timer: 5000
      })

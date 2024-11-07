@@ -7,7 +7,7 @@
         <!-- <div class="col-lg-10 offset-lg-3"> -->
             <!-- <div class="card"> -->
                 <!-- <div class=" ody"> -->
-                    <h2 class="text-center tituloPropio" style="color: blue" ><strong>REGISTRO DE ESPECIALISTA</strong></h2>
+                    <h2 class="text-center tituloPropio" style="color: rgb(255, 255, 255)"><strong>REGISTRO DE ESPECIALISTA</strong></h2>
                     <form [formGroup]="registrarForm" (ngSubmit)="registrar()">
                     <div class="row formulario">
                         <!--Nombre-->
@@ -55,7 +55,7 @@
                             </span>
                             <span class="text-danger"
                             *ngIf="registrarForm.get('dni')?.hasError('minlength') && registrarForm.get('dni')?.touched">
-                                El DNI como mínimo <strong>debe tener 6 dígitos</strong>
+                                El DNI como mínimo <strong>7 dígitos</strong> máximo <strong>8 dígitos</strong>
                             </span>
                         </div>
                         <!--Especialidad-->
@@ -69,10 +69,10 @@
                                 <option value="Alergia">
                                 <option value="Cardiologia">
                             </datalist>-->
-                            <!-- <select class="form-control" formControlName="tipo" [(ngModel)] = "opcionestipos[3]">
+                            <!--<select class="form-control" formControlName="tipo" [(ngModel)] = "opcionestipos[3]">
                                 <option *ngFor="let tipos of opcionestipos"
                                 [value]="tipos" selected>{{tipos}}</option>
-                            </select> -->
+                            </select>-->
                             <span class="text-danger"
                                 *ngIf="registrarForm.get('especialidad')?.hasError('required') && registrarForm.get('especialidad')?.touched">
                                 La Especialidad <strong>es requerida</strong>
@@ -84,10 +84,10 @@
                           <datalist id="otraEspecialidad" >
                               <option *ngFor="let item of listEspecialidad" value= {{item.nombre}}>{{item.nombre}}</option>
                           </datalist>
-                          <!-- <span class="text-danger"
+                          <span class="text-danger"
                               *ngIf="registrarForm.get('especialidad')?.hasError('required') && registrarForm.get('especialidad')?.touched">
-                              La Especialidad <strong>es requerido</strong>
-                          </span> -->
+                              La Especialidad <strong>es requerida</strong>
+                          </span> 
                       </div>
                         <!--Usuario/Correo-->
                         <div class="col-md-6 mb-2">

@@ -24,7 +24,7 @@ import { Router } from '@angular/router';
   imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, FormsModule, CancelarTurnoEspecialistaComponent, FinalizarTurnoEspecialistaComponent,
             HistoriaClinicaTurnoEspecialistaComponent, ResEspecialistaComponent, FilterEspecialistaPipe, OrdenarArrayPipe ],
   templateUrl: './mis-turnos-especialista.component.html',
-  styleUrl: './mis-turnos-especialista.component.css'
+  styleUrl: './mis-turnos-especialista.component.css'  
 })
 
 export class MisTurnosEspecialistaComponent implements OnInit {

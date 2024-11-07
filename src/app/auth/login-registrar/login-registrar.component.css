@@ -29,7 +29,8 @@
   }
   
   .tituloPropio{
-    font-family: 'Montserrat', sans-serif;
+    font-family: cursive;   
+    margin: 100px;
   }
   /* .contenedorLogin{
     display: flex;

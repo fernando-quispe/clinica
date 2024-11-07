@@ -1,0 +1,62 @@
+
+<!--<div *ngIf="ingresos.length > 0">
+  <h2>Lista de Ingresos</h2>
+  <ul>
+    <li *ngFor="let ingreso of ingresos">
+      <strong>Email:</strong> {{ ingreso.email }}       
+      <strong>Fecha y Hora:</strong> {{ ingreso.timestamp?.toDate() | date: 'medium' }}     
+  </ul>
+ 
+</div>
+<ng-template #cargando>
+  <p>Cargando datos...</p>
+</ng-template>
+<div class="text-center">
+  <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
+</div>
+nuevo-->
+
+<app-menu-gral></app-menu-gral>
+<div class="conteiner mt-3">
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br>    
+    <h3 class="text-center p-3">Lista de Ingresos</h3>
+
+    <div class="box text-center">
+      <button  class="btn btn-primary btn-lg float-right" (click)="downloadExcel()">Exportar a Excel</button>
+    </div>
+    <br><br><br>
+
+    <!--<div class="box text-center">
+      <button (click)="downloadExcel()" class="btn btn-success btn-lg">Exportar a Excel</button>       
+    </div>-->
+
+    <div *ngIf='!loading' class="container-table table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-Active">
+          <tr class="table-dark">
+            <th scope="col">Email</th>            
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>              
+          </tr>
+        </thead>        
+
+        <tbody>
+          <tr class="table-light" *ngFor="let ingreso of ingresos">
+            <td class="separador">{{ ingreso.email }}</td>
+            <!--<td class="separador">{{ ingreso.timestamp?.toDate() | date: 'medium' }}</td>     -->
+            <td class="separador">{{ ingreso.fecha }}</td>
+            <td class="separador">{{ ingreso.hora }}</td>       
+          </tr>
+         
+        </tbody>
+
+      </table>
+    </div>
+    
+    <div class="box text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-primary btn-lg">Volver</button>      
+    </div>
+</div>

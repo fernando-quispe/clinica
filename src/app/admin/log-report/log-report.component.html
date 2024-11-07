@@ -1,0 +1,52 @@
+<app-menu-gral></app-menu-gral>
+<div class="conteiner mt-3">
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br>
+    <div class="mx-auto container-info table-responsive text-center">
+        <h2>INGRESOS DE USUARIOS</h2>
+
+        <table>
+            <thead>               
+                <tr>
+                
+                <th><h3>ID USUARIO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>
+                <th><h3>DIA Y HORA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></th>     
+                <th><h3>ACCION</h3></th>
+
+
+                    <!--<td WIDTH="20%"><strong><font color=#ffffff;>ID USUARIO</font></strong>
+                        <br><br><br>
+                        
+                        </td>
+                        <td></td>
+    
+                        <td WIDTH="20%"><strong><font color=#ffffff;>DIA Y HORA</font></strong>
+                        <br><br><br>
+                       
+                        </td>
+                        <td></td>
+    
+                        <td WIDTH="10%"><strong> <font color=#ffffff;>ACCION</font>  </strong>
+                        <br><br><br>
+                       
+                        </td>
+                        <td></td>
+                    </tr>-->                
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let log of logs">
+                <td>{{ log.userId }}</td>
+                <td>{{ log.timestamp | customDate: 'fullDate' }}</td>
+                <!--<td>{{ log.action }}</td>-->
+              </tr>
+            </tbody>
+          </table> 
+
+    </div>
+    <div class="text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
+    </div>
+</div>

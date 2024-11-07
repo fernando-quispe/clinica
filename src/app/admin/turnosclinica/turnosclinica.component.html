@@ -1,0 +1,131 @@
+<app-menu-gral></app-menu-gral>
+<div class="conteiner mt-3">
+
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br>
+
+    <h3 class="text-center p-3">TURNOS DE LA CLINICA</h3>
+    <!--<div>
+      ADMINISTRADOR
+      <img [src]="'../../../'+this.fotoPerfilUnoPaciente" alt="{{ this.nombrePaciente +' ' + this.apellidoPaciente }}" />
+                 {{ this.nombrePaciente +' ' + this.apellidoPaciente }}
+    </div>-->
+
+    <!--<h3 class="text-center p-3">Mis Turnos</h3>-->
+     <!-- Filtro-->
+     <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <input type="text" name="filterPos" class="form-control" placeholder="Buscador ... [ Especialidad o Paciente ]"  [(ngModel)]="filterPost">
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf='!loading' class="container-table table-responsive">
+      <!-- <table class="table table-bordered table-striped mx-auto"> -->
+      <table class="table table-striped">
+        <thead class="thead-Active">
+          <tr class="table-dark">
+            <th scope="col">Info</th> <!--agregue 28 10 -->
+            <th scope="col">Paciente</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Estado</th>
+            <th scope="col">ACCIÓN</th>
+            <!--<th scope="col">ACCIÓN CANCELAR</th>
+            <th scope="col">ACCIÓN FINALIZADA</th>
+            <th scope="col">HISTORIA CLÍNICA</th>
+            <th scope="col">Cuenta</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <!--<tr class="table-light" *ngFor="let item of listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada'" > inicial-->
+          <tr class="table-light" *ngFor="let item of listaTurnoPaciente" >{{listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada'  }}
+            <!--<tr class="table-light" *ngFor="let item of (listaTurnoPaciente | filterEspecialista:filterPost | ordenarArray:'fechaSolicitada')" >-->
+            <!--<tr class="table-light" *ngFor="let item of listaTurnoPaciente" >-->
+            
+            <!--  <td>
+              <img [src]="'../../../'+ item.fotoPerfilUnoPaciente" alt="Especialista {{ item.nombrePaciente +' ' + item.apellidoPaciente }}"/>
+              {{ item.nombrePaciente +' ' + item.apellidoPaciente }}
+           </td>ultimo cambio 28 10-->
+
+            <td>
+              <img [src]="'../../../'+ item.fotoPerfilUnoPaciente" alt="Especialista {{ item.nombrePaciente +' ' + item.apellidoPaciente }}"/>
+              {{ item.nombrePaciente +' ' + item.apellidoPaciente }}
+            </td> 
+
+
+
+           <!--  <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td> -->
+            <td>{{ item?.especialidad }}</td>
+            <td>{{ item.fechaSolicitada }}</td>
+            <td>{{ item.estado }}</td>
+            <!--<td>{{ item.especialidad }}</td>-->
+            <!-- <td>{{ item.fechaAlta }}</td> -->
+            <!-- <div class="scrollbar-especialidades">
+            || item.estado=='PENDINTE') && item.canceladoComentario == ''
+            -->
+            <td>
+              <button class="btn-success" *ngIf="(item.estado !='ACEPTADO' && item.estado !='CANCELADO' && item.estado != 'FINALIZADO')" (click)="aceptarTurno(item)">ACEPTAR</button>
+            <!--</td>
+
+            <td>
+              <input type="text" class="datos-turno" placeholder="Motivo Cancelado" *ngIf="item.estado=='PENDIENTE'" [(ngModel)]="inputCancelado">-->
+              <button class="btn-danger" *ngIf="item.estado=='PENDIENTE'  " (click)="cancelarTurno(item)">CANCELAR</button>
+              <!--<p *ngIf="item.estado == 'CANCELADO' "> {{item.canceladoComentario}}</p>
+            </td>
+
+            <td>
+              <input type="text" class="datos-turno" placeholder="Reseña del Especialista" *ngIf="item.estado=='ACEPTADO' " [(ngModel)]="inputResena">
+              <input type="text" class="datos-turno" placeholder="Diagnostico del Especialista" *ngIf="item.estado=='ACEPTADO' " [(ngModel)]="inputDiagnotico">-->
+              <button class="btn-success"  *ngIf="item.estado=='ACEPTADO' " (click)="finalizadaAtencion(item)">FINALIZAR ATENCIÓN</button>
+              <!--<p *ngIf="item.estado=='FINALIZADO' "> {{item.resena}}</p>
+              <p *ngIf="item.estado=='FINALIZADO' "> {{item.diagnostico}}</p>
+            </td>
+
+            <td>
+              <input type="text" class="datos-turno" placeholder="Ingrese Altura" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputAltura">
+              <input type="text" class="datos-turno" placeholder="Ingrese Peso" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputPeso">
+              <input type="text" class="datos-turno" placeholder="Ingrese Temperatura" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputTemperatura">
+              <input type="text" class="datos-turno" placeholder="Ingrese Presión" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputPresion">
+              <input type="text" class="datos-turno" placeholder="Ingrese Clave" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputClave1">
+              <input type="text" class="datos-turno" placeholder="Ingrese Valor" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputValor1">
+              <input type="text" class="datos-turno" placeholder="Ingrese Clave" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputClave2">
+              <input type="text" class="datos-turno" placeholder="Ingrese Valor" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputValor2">
+              <input type="text" class="datos-turno" placeholder="Ingrese Clave" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputClave3">
+              <input type="text" class="datos-turno" placeholder="Ingrese Valor" *ngIf="item.altura=='' && item.estado=='FINALIZADO' " [(ngModel)]="inputValor3">
+            -->
+              <button class="btn-success"  *ngIf="item.altura=='' && item.estado=='FINALIZADO' " (click)="guardarHistoriaClinica(item)">GUARDAR HISTORIA</button>
+              <button class="btn-success"  *ngIf="item.resena!='' " (click)="verResena(item)">VER RESEÑA</button>
+
+              <!--<input type="text" class="datos-turno" readonly placeholder="Ingrese Altura" *ngIf="item.altura!='' && item.estado=='FINALIZADO' "value={{item.altura}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Peso" *ngIf="item.peso!='' && item.estado=='FINALIZADO'" value={{item.peso}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Temperatura" *ngIf="item.temperatura!='' && item.estado=='FINALIZADO' " value={{item.temperatura}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Presión" *ngIf="item.presion!='' && item.estado=='FINALIZADO'" value={{item.presion}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Clave" *ngIf="item.clave1!='' && item.estado=='FINALIZADO' " value={{item.clave1}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Valor" *ngIf="item.valor1!='' && item.estado=='FINALIZADO' " value={{item.valor1}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Clave" *ngIf="item.clave2!='' && item.estado=='FINALIZADO'" value={{item.clave2}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Valor" *ngIf="item.valor2!='' && item.estado=='FINALIZADO'" value={{item.valor2}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Clave"  *ngIf="item.clave3!=''&& item.estado=='FINALIZADO' " value={{item.clave3}}>
+              <input type="text" class="datos-turno" readonly placeholder="Ingrese Valor" *ngIf="item.valor3!='' && item.estado=='FINALIZADO'" value={{item.valor3}}>
+            -->
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
+    </div>
+
+
+</div>
+<app-cancelar-turno-especialista *ngIf="activarCancelar"  [actualDetalleTurno]="actualTurno"></app-cancelar-turno-especialista>
+<app-finalizar-turno-especialista *ngIf="activarFinalizar" [actualDetalleTurno]="actualTurno"></app-finalizar-turno-especialista>
+<app-historia-clinica-turno-especialista *ngIf="activarHistoriaClinica" [actualDetalleTurno]="actualTurno"></app-historia-clinica-turno-especialista>
+<app-res-especialista *ngIf="activarVerResena" [actualDetalleTurno]="actualTurno"></app-res-especialista>
+

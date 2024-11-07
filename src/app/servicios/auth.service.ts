@@ -89,11 +89,31 @@ export class AuthService {
     try {
       const { user } = await this.afAuth.signInWithEmailAndPassword(email, password );
       this.updateUserData(user);
+      this.logLogin(user.email); //lo agregue 03 10
       return user;
     } catch (error) {
       console.log(error);
       return null; // O un valor predeterminado , lo agregue
     }
+  }
+
+  //lo agregue
+  login2(email: string, password: string) {
+    return new Promise((resolve, reject) => {
+      this.afAuth.signInWithEmailAndPassword(email, password)
+        .then(user => {
+          let fecha=new Date();
+          this.afs.collection('ingresos').add({
+            email: email,
+            fechaacceso:  fecha.getDate() + '-' + (fecha.getMonth()+1) +  '-' +fecha.getFullYear(),
+            dato: 'Ingreso al sistema'
+          })
+          resolve(user);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    })
   }
   
   async register(email: string, password: string): Promise<User | null> { //agregue null
@@ -188,5 +208,13 @@ export class AuthService {
       console.log('Paso 8 auth Servicio auth -  NO',this.perfil);
       return false;
     }
+  }
+
+  //agregado 03 10
+  private logLogin(email: string) {
+    this.afs.collection('ingresos').add({
+      email: email,
+      timestamp: new Date()
+    });
   }
 }

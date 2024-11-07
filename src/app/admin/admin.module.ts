@@ -9,6 +9,9 @@ import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { GenerarUsuarioAdminComponent } from './generar-usuario-admin/generar-usuario-admin.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SolicitarTurnoComponent } from '../paciente/solicitar-turno/solicitar-turno.component';
+import { TurnosclinicaComponent } from './turnosclinica/turnosclinica.component';
+import { LogReportComponent } from './log-report/log-report.component';
+import { IngresosComponent } from './ingresos/ingresos.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { SolicitarTurnoComponent } from '../paciente/solicitar-turno/solicitar-t
     MiPerfilComponent,
     GenerarUsuarioAdminComponent,
     UsuariosComponent,
-    SolicitarTurnoComponent
+    SolicitarTurnoComponent,
+    TurnosclinicaComponent,
+    LogReportComponent,
+    IngresosComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +42,10 @@ import { SolicitarTurnoComponent } from '../paciente/solicitar-turno/solicitar-t
     MiPerfilComponent,
     GenerarUsuarioAdminComponent,
     UsuariosComponent,
-    SolicitarTurnoComponent
+    SolicitarTurnoComponent,
+    TurnosclinicaComponent,
+    LogReportComponent,
+    IngresosComponent    
   ]
 })
 

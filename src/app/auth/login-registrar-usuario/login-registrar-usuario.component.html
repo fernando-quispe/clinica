@@ -8,7 +8,7 @@
         <!-- <div class="col-lg-10 offset-lg-3"> -->
             <!-- <div class="card"> -->
                 <!-- <div class=" ody"> -->
-                    <h2 class="text-center tituloPropio" style="color: blue" ><strong>REGISTRO DE PACIENTE</strong></h2>
+                    <h2 class="text-center tituloPropio" style="color: white" ><strong>REGISTRO DE PACIENTE</strong></h2>
                     <form [formGroup]="registrarForm" (ngSubmit)="registrar()">
                     <div class="row formulario">
                         <!--Nombre-->
@@ -56,7 +56,7 @@
                             </span>
                             <span class="text-danger"
                             *ngIf="registrarForm.get('dni')?.hasError('minlength') && registrarForm.get('dni')?.touched">
-                                Edad como minimo <strong>6 digitos</strong>
+                                El DNI minimo <strong>7 digitos</strong> maximo <strong>8 digitos</strong>
                             </span>
                         </div>
                         <!--Obrasocial - realice modificaciones-->

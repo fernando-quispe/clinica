@@ -66,6 +66,11 @@ export class UsuarioService {
     return this._firestore.collection('turnos').stateChanges();
   }
 
+  //agregue para Turnos Clinica
+  getListaEspecialistas(): Observable<any>{
+    return this._firestore.collection('turnos').stateChanges();
+  }
+
   getTurnosDrYEspecialidad(espcialidad:string,emailDoctor:string): Observable<any>{
     return this._firestore.collection('turnos', ref => ref.where('email','==',emailDoctor).where('especialidad','==',espcialidad)).snapshotChanges();
   }

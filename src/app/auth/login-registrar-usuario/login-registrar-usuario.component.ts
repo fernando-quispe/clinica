@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ObraSocial } from '../../clases/obra-social';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -46,10 +46,10 @@ export class LoginRegistrarUsuarioComponent implements OnInit {
                 console.log(this.captchaGenerado);
 
       this.registrarForm = this.fb.group({
-        nombre: ['',[Validators.required,Validators.minLength(4)]],
-        apellido: ['',[Validators.required,Validators.minLength(4)]],
+        nombre: ['',[Validators.required,Validators.minLength(4), this.validarLetra]],
+        apellido: ['',[Validators.required,Validators.minLength(4), this.validarLetra]],
         edad: ['',[Validators.required,Validators.minLength(2)]],
-        dni: ['',[Validators.required,Validators.minLength(6)]],
+        dni: ['',[Validators.required,Validators.min(7), Validators.max(8)]],
         obrasocial: ['',[Validators.required]],
         fotoPerfil: ['no la guardo aun',[Validators.required]],
         fotoPerfil2: ['no la guardo aun',[Validators.required]],
@@ -179,5 +179,15 @@ export class LoginRegistrarUsuarioComponent implements OnInit {
   ngOnDestroy(): void {
     //this.suscriptionUser.unsubscribe();
       this.suscriptionList.unsubscribe();
+  }
+
+  
+  validarLetra(control: AbstractControl): object | null {
+    const letra = control.value;
+    const soloLetras = /^[a-zA-Z]+$/;
+    if (!soloLetras.test(letra)) {
+      return { soloLetras: true };
+    }
+    return null;
   }
 }

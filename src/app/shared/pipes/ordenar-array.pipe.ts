@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'ordenarArray',
-  standalone: true //ver
+  standalone: true 
 })
 
 export class OrdenarArrayPipe implements PipeTransform {
@@ -15,7 +15,7 @@ export class OrdenarArrayPipe implements PipeTransform {
     return array.sort((a: any, b: any) => {
       if (a[args].toLowerCase() < b[args].toLowerCase()) {
         return -1;
-      } else if (a[args] > b[args]) {
+      } else if (a[args].toLowerCase() > b[args].toLowerCase()) {
         return 1;
       } else {
         return 0;
