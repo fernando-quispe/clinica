@@ -2,6 +2,10 @@
 <!-- <div class="conteiner"> -->
   <div class="p-4 p-md-5 mb-4 rounded" id="contenedor-absoluto">
     <div class="row" id="main-row" hidden>
+
+
+
+      <!--Solicitar turno-->
       <div class="col-md-6" id="col1">
         <h1 class="display-4 fst-italic" id="titulo-principal">Solicitar turno</h1>
         <div class="col-md-25" id="listado-turnos">
@@ -13,13 +17,20 @@
             <input class="datos-turno" readonly placeholder="Elija fecha" [(ngModel)]="fechaIngresada">
 
             <ul id="opciones-turnos" hidden>
-              <li *ngFor="let turno of arrayTurnos; index as i" class="item-turno" (click)="turnoClickeado(turno)">{{arrayTurnos[i]}}</li>
+              <li *ngFor="let turno of arrayTurnos; index as i" class="item-turno" id="btn-solicitar-turno" (click)="turnoClickeado(turno)">{{arrayTurnos[i]}}</li>
             </ul>
-            <button id="btn-solicitar-turno" (click)="solicitarTurno()">Tomar turno</button>
+            <button id="btn-solicitar-turno-final" (click)="solicitarTurno()">Tomar turno</button>
           </div>
         </div>
       </div>
 
+
+      <!--<button id="btn-solicitar-turno" (click)="solicitarTurno()">Tomar turno</button>-->
+
+
+
+
+      <!--Elija espacialidad-->
       <div class="col-md-3" id="col2">
         <h1 class="display-4 fst-italic" id="titulo-principal2">Elija especialidad</h1>
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -38,6 +49,7 @@
         </div>
       </div>
 
+      <!--Elija especialista-->
       <div class="col-md-3" id="col3">
         <h1 class="display-4 fst-italic" id="titulo-principal3">Elija especialista</h1>
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -54,9 +66,14 @@
       </div>
 
     </div>
+
     <div>
       <img [src]="'../../../'+fotoPerfilUnoPaciente" width="80px" height="80px" alt=" '{{ nombrePaciente }}' + ' ' + '{{ apellidoPaciente }}'" />
       {{ nombrePaciente  + ' ' +  apellidoPaciente }}
     </div>
+
   </div>
+
+  
+
 <!-- </div> -->

@@ -10,29 +10,29 @@
       <table class="table table-striped">
         <thead class="thead-Active">
           <tr class="table-dark">
-            <th scope="col">Foto</th>
+            <th class="separador1" scope="col">Foto</th>
             <!-- <th scope="col">Nombre</th>
             <th scope="col">Apellido</th> -->
-            <th scope="col">Edad</th>
-            <th scope="col">Dni</th>
-            <th scope="col">Correo electrónico</th>
+            <th class="separador1" scope="col">Edad</th>
+            <th class="separador1" scope="col">Dni</th>
+            <th class="separador1" scope="col">Correo electrónico</th>
             <!-- <th scope="col">Fecha de alta</th> -->
-            <th scope="col">Especialidad</th>
-            <th scope="col">Cuenta</th>
+            <th class="separador1" scope="col">Especialidad</th>
+            <th class="separador1" scope="col">Cuenta</th>
           </tr>
         </thead>
         <tbody>
           <tr class="table-light" *ngFor="let item of listaUsuarioEspecialista">
-            <td>
+            <td class="separador">
                <img [src]="'../../../'+item.fotoPerfilUno" alt="Especialista {{ item.nombre +' ' + item.apellido }}" />
                {{ item.nombre +' ' + item.apellido }}
             </td>
            <!--  <td>{{ item.nombre }}</td>
             <td>{{ item.apellido }}</td> -->
-            <td>{{ item.edad }}</td>
-            <td>{{ item.dni }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.especialidad }}</td>
+            <td class="separador">{{ item.edad }}</td>
+            <td class="separador">{{ item.dni }}</td>
+            <td class="separador">{{ item.email }}</td>
+            <td class="separador">{{ item.especialidad }}</td>
             <!-- <td>{{ item.fechaAlta }}</td> -->
             <!-- <div class="scrollbar-especialidades">
               <td>
@@ -48,7 +48,7 @@
                 </table>
               </td>
             </div> -->
-            <td>
+            <td class="separador">
               <button class="btn-success" *ngIf="item.aprobadoPorAdmin=='NO'" (click)="habilitarCuenta(item)">Habilitar</button>
               <button class="btn-danger"  *ngIf="item.aprobadoPorAdmin=='SI'" (click)="deshabilitarCuenta(item)">Deshabilitar</button>
             </td>

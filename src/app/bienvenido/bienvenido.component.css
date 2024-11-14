@@ -1,7 +1,7 @@
 .container {
     background-image: url('../../assets/clinica/clinica03.jpg');   
-    background-size: 100%;
-    /*background-position: center top;*/
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     /*display: flex;*/
     /*flex-direction: column;*/

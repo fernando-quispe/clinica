@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-cancelar-turno',
   standalone: true,
-  imports: [MenuGralComponent, ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './cancelar-turno.component.html',
   styleUrl: './cancelar-turno.component.css'
 })
@@ -52,7 +52,7 @@ export class CancelarTurnoComponent implements OnInit {
      Swal.fire({
        position: 'top-end',
        icon: 'success',
-       title: 'Su Turno fue Calificado con exito!',
+       title: 'Su Turno fue calificado con exito!',
        showConfirmButton: false,
        timer: 5000
      })

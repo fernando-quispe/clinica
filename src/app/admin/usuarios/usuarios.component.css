@@ -35,3 +35,12 @@ img {
     width: 100%;
 }
   
+.separador {
+    border-bottom: 1px solid #b4b4b4;
+    margin: 10px 0;
+}
+
+.separador1 {
+    border-bottom: 1px solid #474747;
+    margin: 10px 0;
+}

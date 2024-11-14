@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 
 export class SolicitarTurnoComponent implements OnInit {
 
+  currentYear: number;
   //Paciente
   usuarioPacienteMailIngresado:any;
   apellidoPaciente:string;
@@ -58,6 +59,8 @@ export class SolicitarTurnoComponent implements OnInit {
     contenedorMain.removeAttribute("hidden");
     contenedorMain.style.animation = "slide-in-elliptic-left-bck 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
     // Aca ya esta cargado el email del paciente
+
+    this.currentYear = new Date().getFullYear(); // Obtiene el año actual
   }
 
   ngOnDestroy(): void {
@@ -124,6 +127,7 @@ export class SolicitarTurnoComponent implements OnInit {
     return arrayEspecialidadesNoRepetidas;
   }
 
+
   especialidadElegida(valorEmitidoRecibido:any)
   {
     this.especialidadIngresada = valorEmitidoRecibido;
@@ -171,8 +175,7 @@ export class SolicitarTurnoComponent implements OnInit {
     })
   }
 
-  especialistaElegido(especialista:any)
-  {
+  especialistaElegido(especialista:any)  {
     console.log('especialistaElegido ',especialista);
     this.arrayTurnos=[];
     this.especialistaIngresado = especialista.email;
@@ -182,20 +185,16 @@ export class SolicitarTurnoComponent implements OnInit {
 
     // Enviar los Turnos de este Especialista elegido (Filtrado por email/especialidad)
     this.getTurnosDrYEspecialidadServicio(this.especialidadIngresada,this.especialistaIngresado);
-
     this.generarTurnos();
 
     let listadoTurnos = document.getElementById("opciones-turnos");
     listadoTurnos?.setAttribute("hidden","true");
 
-    setTimeout(() =>
-    {
+    setTimeout(() =>  {
       let listadoTurnos:any = document.getElementById("opciones-turnos");
       listadoTurnos?.removeAttribute("hidden");
-
       listadoTurnos.style.animation = "slide-in-elliptic-top-fwd 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
     }, 1000);
-
   }
 
   //****************************************************** */
@@ -338,7 +337,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Mon") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Lunes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Lunes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" +  this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];  
             }
           });
           break;
@@ -350,7 +350,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Tue") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Martes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Martes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" +  this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -362,7 +363,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Wed") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Miercoles " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Miercoles " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" +  this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -374,7 +376,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Thu") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Jueves " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Jueves " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear + "-" + this.traducirMesIngles(fechaSpliteada[1]) + "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -386,7 +389,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Fri") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Viernes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Viernes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" +  this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -398,7 +402,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Sat") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Sabado " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Sabado " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" +  this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -422,7 +427,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Mon") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Lunes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Lunes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" +  this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -434,7 +440,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Tue") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Martes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Martes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" +  this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -446,7 +453,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Wed") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Miercoles " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Miercoles " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-"  + this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -458,7 +466,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Thu") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Jueves " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Jueves " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-"  + this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -470,8 +479,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Fri") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Viernes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
-            }
+              //fechaEncontrada = "Viernes " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" + this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];            }
           });
           break;
         }
@@ -482,7 +491,8 @@ export class SolicitarTurnoComponent implements OnInit {
             if (stringFecha.includes("Sat") == true) {
               let fechaSpliteada = stringFecha.split(" ",3);
               console.log(fechaSpliteada);
-              fechaEncontrada = "Sabado " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              //fechaEncontrada = "Sabado " + fechaSpliteada[2] + " de " + this.traducirMesIngles(fechaSpliteada[1]);
+              fechaEncontrada = this.currentYear  + "-" + this.traducirMesIngles(fechaSpliteada[1]) +  "-" + fechaSpliteada[2];
             }
           });
           break;
@@ -498,51 +508,51 @@ export class SolicitarTurnoComponent implements OnInit {
     switch (mesIngles)
     {
       case 'Jan': {
-        traduccion = "Ene";
+        traduccion = "01";
         break;
       }
       case 'Feb': {
-        traduccion = "Feb";
+        traduccion = "02";
         break;
       }
       case 'Mar': {
-        traduccion = "Mar";
+        traduccion = "03";
         break;
       }
       case 'Apr': {
-        traduccion = "Abr";
+        traduccion = "04";
         break;
       }
       case 'May': {
-        traduccion = "May";
+        traduccion = "05";
         break;
       }
       case 'Jun': {
-        traduccion = "Jun";
+        traduccion = "06";
         break;
       }
       case 'Jul': {
-        traduccion = "Jul";
+        traduccion = "07";
         break;
       }
       case 'Aug': {
-        traduccion = "Ago";
+        traduccion = "08";
         break;
       }
       case 'Sep': {
-        traduccion = "Sep";
+        traduccion = "09";
         break;
       }
       case 'Oct': {
-        traduccion = "Oct";
+        traduccion = "10";
         break;
       }
       case 'Nov': {
-        traduccion = "Nov";
+        traduccion = "11";
         break;
       }
       case 'Dec': {
-        traduccion = "Dic";
+        traduccion = "12";
         break;
       }
     }

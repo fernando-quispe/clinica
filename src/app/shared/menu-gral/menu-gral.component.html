@@ -5,7 +5,7 @@
         <a class="nav-link" (click)=inicio()>Bienvenido <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" ><b>Perfil:</b> {{ gralPerfil }} - <b>Usuario:</b> {{ email }}</a>
+        <a class="nav-link " ><b>Perfil:</b> {{ gralPerfil }} - <b>Usuario:</b> {{ email }}</a>
       </li>
 
 
@@ -22,13 +22,13 @@
 
       <!--cambios paciente 02 11 -->
       <li  class="nav-item active" *ngIf="gralPerfil=='Paciente' ">
-        <a  class="nav-link" (click)=misTurnos()>- Mis Turnos - </a>       
+        <a  class="nav-link button" (click)=misTurnos()>- Mis Turnos - </a>       
       </li>
       <li  class="nav-item active" *ngIf="gralPerfil=='Paciente' ">        
-        <a  class=" nav-link" (click)=solicitarTurno()>Solicitar Turno - </a>       
+        <a  class=" nav-link button" (click)=solicitarTurno()>Solicitar Turno - </a>       
       </li>
       <li  class="nav-item active" *ngIf="gralPerfil=='Paciente' ">        
-        <a class="nav-link" (click)=perfilPaciente()>Mi Perfil</a>
+        <a class="nav-link button" (click)=perfilPaciente()>Mi Perfil</a>
       </li>
 
     <!-- Especialista/Médico --> 
@@ -49,13 +49,13 @@
 
       <!--cambios especialista 02 11 -->
       <li  class="nav-item active" *ngIf="gralPerfil=='Especialista' ">
-        <a  class="nav-link" (click)=misTurnoEspecialista()>- Mis Turnos -</a>       
+        <a  class="nav-link button" (click)=misTurnoEspecialista()>- Mis Turnos -</a>       
       </li>
       <li  class="nav-item active" *ngIf="gralPerfil=='Especialista' ">        
-        <a  class=" nav-link" (click)=misPacientes()>Pacientes -</a>       
+        <a  class=" nav-link button" (click)=misPacientes()>Pacientes -</a>       
       </li>
       <li  class="nav-item active" *ngIf="gralPerfil=='Especialista' ">        
-        <a class="nav-link" (click)=perfilEspecialista()>Mi Perfil</a>
+        <a class="nav-link button" (click)=perfilEspecialista()>Mi Perfil</a>
       </li>    
     
     <!--  Administrador -->
@@ -82,27 +82,27 @@
 
       <!--cambios administrador 02 11 -->
       <li  class="nav-item active" *ngIf="gralPerfil=='Administrador' ">
-        <a  class="nav-link" (click)=turnosclinica()>- Turnos -</a>     
+        <a  class="nav-link button" (click)=turnosclinica()>- Turnos -</a>     
       </li>
       <li  class="nav-item active" *ngIf="gralPerfil=='Administrador' ">        
-        <a  class=" nav-link" onclick="this.blur();" (click)="solicitarTurnoAdmin()">Solicitar Turno -</a>       
+        <a  class=" nav-link button" onclick="this.blur();" (click)="solicitarTurnoAdmin()">Solicitar Turno -</a>       
       </li>
       <li  class="nav-item active" *ngIf="gralPerfil=='Administrador' ">        
-        <a class="nav-link" (click)=Perfil()>Mi Perfil -</a>
+        <a class="nav-link button" (click)=Perfil()>Mi Perfil -</a>
       </li>      
       <li class="nav-item active dropdown-submenu" *ngIf="gralPerfil=='Administrador' ">
-        <a class="nav-link" data-toggle="dropdown">Usuarios</a>
+        <a class="nav-link button" data-toggle="dropdown">Usuarios</a>
         <ul class="dropdown-menu">
-          <li> <a class="dropdown-item" (click)=habilitarInhabilitar()>Habilitar/Inhabilitar Especialista</a></li>
-          <li> <a class="dropdown-item" (click)=usuarioAdmin()>Lista Usuarios</a></li>
-          <li> <a class="dropdown-item" (click)=genUsuarioAdmin()>Generar usuario</a></li>
+          <li> <a class="dropdown-item button" (click)=habilitarInhabilitar()>Habilitar/Inhabilitar Especialista</a></li>
+          <li> <a class="dropdown-item button" (click)=usuarioAdmin()>Datos de los Usuarios</a></li>
+          <li> <a class="dropdown-item button" (click)=genUsuarioAdmin()>Generar usuario</a></li>
           <!-- <li> <a class="dropdown-item" >Historia Clinica</a></li> -->
         </ul>
       </li>
       <li class="nav-item active dropdown-submenu" *ngIf="gralPerfil=='Administrador' ">
-        <a class="nav-link" data-toggle="dropdown">- Informes</a>
-        <ul class="dropdown-menu">
-          <li> <a class="dropdown-item" (click)=ingresos()>Log de Ingresos</a></li>
+        <a class="nav-link button" data-toggle="dropdown">- Informes</a>
+        <ul class="dropdown-menu button">
+          <li> <a class="dropdown-item button" (click)=ingresos()>Log de Ingresos</a></li>
           <!--<li> <a class="dropdown-item" (click)=usuarioAdmin()>Turnos por Especialidad</a></li>-->
           <!--<li> <a class="dropdown-item" (click)=genUsuarioAdmin()>Turnos por Día</a></li>-->
           <!-- <li> <a class="dropdown-item" >Historia Clinica</a></li> -->
@@ -118,7 +118,7 @@
         </ul>
       </li> -->
       <li class="nav-item active">
-            <a class="nav-link" (click)=desloguearse()> - Desloguearse</a>
+            <a class="nav-link button" (click)=desloguearse()> - Desloguearse</a>
       </li>
     </ul>
   </div>

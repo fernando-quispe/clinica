@@ -17,8 +17,10 @@ export class FilterEspecialistaPipe implements PipeTransform {
     for (const post of value ) {
       if (post.especialidad.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
           post.nombrePaciente.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
-          post.apellidoPaciente.toLowerCase().indexOf(arg.toLowerCase()) > -1)  {
-
+          post.apellidoPaciente.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+          post.estado.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+          post.fechaSolicitada.toLowerCase().indexOf(arg.toLowerCase()) > -1 ) { 
+          //post.estado.toLowerCase().indexOf(arg.toLowerCase()) > -1  
         resultFilter.push(post);
       }
     };

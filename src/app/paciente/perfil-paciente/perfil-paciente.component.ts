@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-perfil-paciente',
   standalone: true,
-  imports: [MenuGralComponent, SpinnerComponent, NgIf, HistoriaClinicaTurnoEspecialistaComponent, HistoriaClinicaComponent, HistoriaClinicaEspComponent],
+  imports: [MenuGralComponent, SpinnerComponent, NgIf, HistoriaClinicaComponent],
   templateUrl: './perfil-paciente.component.html',
   styleUrl: './perfil-paciente.component.css'
 })
@@ -60,5 +60,4 @@ export class PerfilPacienteComponent implements OnInit {
     //localStorage.removeItem('loggedUser');
     this.router.navigateByUrl('/bienvenido')
   }
-
 }

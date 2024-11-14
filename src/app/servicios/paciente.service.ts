@@ -20,6 +20,7 @@ export class PacienteService {
   devuelvoEstado: boolean;
   listPerfil: Perfil[] = [];
   gralPerfil:string;
+  estePerfil="Paciente";
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -82,7 +83,7 @@ export class PacienteService {
 
   
   isActualSessionPaciente(){
-    const esperando = this.getPerfil(); //this.perfilBuscado();
+    const esperando = this.estePerfil;; // 10/11 para que lo traiga
     console.log('Imprimo Perfil esperado Paciente:', esperando);
 
     if (esperando === 'Paciente') {

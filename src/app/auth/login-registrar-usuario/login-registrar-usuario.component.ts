@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ObraSocial } from '../../clases/obra-social';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorService } from '../../servicios/error.service';
 import { ObraSocialService } from '../../servicios/obra-social.service';
@@ -12,13 +12,16 @@ import { CaptchaService } from '../../servicios/captcha.service';
 import { MyValidations } from '../../utils/my-validations';
 import { Usuario } from '../../clases/usuario';
 import Swal from 'sweetalert2';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { SpinnerComponent } from '../../shared/spinner/spinner.component';
+import { CaptchaDirective } from '../../directivas/captcha.directive';
+import { Captchav3Component } from '../../captchav3/captchav3.component';
+import { RecaptchaComponent, RecaptchaModule, ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-login-registrar-usuario',
   standalone: true,
-  imports: [NgIf, ReactiveFormsModule, SpinnerComponent, ],
+  imports: [NgIf, ReactiveFormsModule, SpinnerComponent, CommonModule, RecaptchaModule],
   templateUrl: './login-registrar-usuario.component.html',
   styleUrl: './login-registrar-usuario.component.css'
 })
@@ -32,6 +35,14 @@ export class LoginRegistrarUsuarioComponent implements OnInit {
   public obtengoFile2: string;
   public gabrarSegundaParte = false;
   captchaGenerado: string;
+  
+
+  //new 0711
+  userCaptchaAnswer: number | null = null; // Almacena la respuesta del usuario
+  captchaPassed: number | null = null; // Indica si el CAPTCHA fue resuelto
+  //captchaPassed: boolean = false;
+  correctAnswer: number = 0; // Respuesta correcta de la directiva
+  recaptchaService: any;
 
   constructor(private fb: FormBuilder,
     private afAuth : AngularFireAuth,
@@ -40,10 +51,9 @@ export class LoginRegistrarUsuarioComponent implements OnInit {
     private _errorService: ErrorService,
     private _obrasocialService: ObraSocialService,
     private _usuarioService: UsuarioService,
-    private _captcha: CaptchaService) {
+    ) {
 
-      this.captchaGenerado = this._captcha.pickearPalabraRandom();
-                console.log(this.captchaGenerado);
+     
 
       this.registrarForm = this.fb.group({
         nombre: ['',[Validators.required,Validators.minLength(4), this.validarLetra]],
@@ -56,7 +66,7 @@ export class LoginRegistrarUsuarioComponent implements OnInit {
         correo: ['',[Validators.required, Validators.email]],
         password: ['',[Validators.required, Validators.minLength(6)]],
         repetirPassword: [''],
-        captcha:['',[Validators.required,MyValidations.isCaptchaWithParam(this.captchaGenerado)]],
+        captcha: ['', Validators.required] 
       }, { validator: this.ckeckPassword})
   }
 
@@ -64,7 +74,20 @@ export class LoginRegistrarUsuarioComponent implements OnInit {
     this.getObrasocial();
   }
 
-  registrar(){
+  // Método para manejar la respuesta de reCAPTCHA
+  onCaptchaResolved(captchaResponse: string | null): void {
+    this.registrarForm.patchValue({
+      captcha: captchaResponse
+    });
+  }
+
+  // Método de registro
+  async registrar(){
+    if (!this.registrarForm.get('captcha')?.value) {
+      this.toastr.error('Debe completar el reCAPTCHA antes de continuar', 'Error');
+      return;
+    }
+    
     console.log('grabrarSegundaParte0 ');
     this.registrarPaciente();
     console.log('grabrarSegundaParte3 ');
@@ -190,4 +213,21 @@ export class LoginRegistrarUsuarioComponent implements OnInit {
     }
     return null;
   }
+
+    
+
+  executeRecaptcha(){
+    this.recaptchaService.execute('').subscribe((token)=> {
+      console.log(token)
+    } )
+  }
+
+  executeRecaptchaVisible(token:any){
+    console.log(token);
+  }  
+
+   
 }
+
+
+

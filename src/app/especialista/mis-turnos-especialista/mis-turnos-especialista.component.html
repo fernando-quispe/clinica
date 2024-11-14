@@ -15,7 +15,7 @@
      <div class="row">
       <div class="col">
         <div class="form-group">
-          <input type="text" name="filterPos" class="form-control" placeholder="Buscador ... [ Especialidad o Paciente ]"  [(ngModel)]="filterPost">
+          <input type="text" name="filterPos" class="form-control" placeholder="Buscador ... [ Especialidad/Paciente/Fecha/Estado ]"  [(ngModel)]="filterPost">
         </div>
       </div>
     </div>
@@ -26,11 +26,11 @@
         <thead class="thead-Active">
           <tr class="table-dark">
             <!--<th scope="col">Info</th> agregue 28 10 -->
-            <th scope="col">Paciente</th>
-            <th scope="col">Especialidad</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Estado</th>
-            <th scope="col">ACCIÓN</th>
+            <th scope="col" class="separador1">Paciente</th>
+            <th scope="col" class="separador1">Especialidad</th>
+            <th scope="col" class="separador1">Fecha</th>
+            <th scope="col" class="separador1">Estado</th>
+            <th scope="col" class="separador1">ACCIÓN</th>
             <!--<th scope="col">ACCIÓN CANCELAR</th>
             <th scope="col">ACCIÓN FINALIZADA</th>
             <th scope="col">HISTORIA CLÍNICA</th>
@@ -48,22 +48,22 @@
               {{ item.nombrePaciente +' ' + item.apellidoPaciente }}
            </td>ultimo cambio 28 10-->
 
-            <td>
+            <td class="separador">
               <img [src]="'../../../'+ item.fotoPerfilUnoPaciente" alt="Especialista {{ item.nombrePaciente +' ' + item.apellidoPaciente }}"/>
               {{ item.nombrePaciente +' ' + item.apellidoPaciente }}
             </td> 
 
            <!--  <td>{{ item.nombre }}</td>
             <td>{{ item.apellido }}</td> -->
-            <td>{{ item.especialidad }}</td>
-            <td>{{ item.fechaSolicitada }}</td>
-            <td>{{ item.estado }}</td>
+            <td class="separador">{{ item.especialidad }}</td>
+            <td class="separador">{{ item.fechaSolicitada }}</td>
+            <td class="separador">{{ item.estado }}</td>
             <!--<td>{{ item.especialidad }}</td>-->
             <!-- <td>{{ item.fechaAlta }}</td> -->
             <!-- <div class="scrollbar-especialidades">
             || item.estado=='PENDINTE') && item.canceladoComentario == ''
             -->
-            <td>
+            <td class="separador">
               <button class="btn-success" *ngIf="(item.estado !='ACEPTADO' && item.estado !='CANCELADO' && item.estado != 'FINALIZADO')" (click)="aceptarTurno(item)">ACEPTAR</button>
             <!--</td>
 

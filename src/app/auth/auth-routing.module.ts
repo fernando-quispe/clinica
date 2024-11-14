@@ -8,7 +8,7 @@ import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.co
 import { LoginRegistrarAdminComponent } from './login-registrar-admin/login-registrar-admin.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, data: { animation: 'login' } },
   { path: 'MenuRegistrar', component: MenuRegistrarComponent},
   { path: 'registrarPaciente', component: LoginRegistrarUsuarioComponent},
   //{ path: 'registrarAdmin', component: LoginRegistrarAdminComponent},

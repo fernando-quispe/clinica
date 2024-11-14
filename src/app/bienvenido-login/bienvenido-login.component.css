@@ -1,12 +1,12 @@
 .container {
   background-image: url(../../assets/clinica/bienvenida.jpg);    
-  background-size: 100%;
-  /*background-position: center top;*/
+  background-size: cover;
+  /*background-position: center;*/
   background-repeat: no-repeat;
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*justify-content: center;
-  align-items: center;*/
+     /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;
+    align-items: center;*/
   height: 93vh;
   max-width: 3000px;
 }

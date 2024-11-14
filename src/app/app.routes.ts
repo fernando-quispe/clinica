@@ -5,11 +5,11 @@ import { BienvenidoLoginComponent } from './bienvenido-login/bienvenido-login.co
 
 export const routes: Routes = [
     
-    { path: 'bienvenido',component: BienvenidoComponent}, //,canActivate:[AutGuard]
-    { path: 'bienvenidoLogin',component: BienvenidoLoginComponent},
+    { path: 'bienvenido',component: BienvenidoComponent, data: { animation: 'bienvenido' } }, //,canActivate:[AutGuard]
+    { path: 'bienvenidoLogin',component: BienvenidoLoginComponent, data: { animation: 'bienvenidoLogin' } },
     //{ path: 'busqueda',component: BusquedaComponent },
     { path: 'auth', 
-      loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)},
+      loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule), data: { animation: 'auth' } },
     { path: 'paciente',//canActivate: [PacienteGuard],
               loadChildren: () => import('./paciente/paciente.module')
               .then(m => m.PacienteModule)},

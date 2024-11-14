@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subscription, switchMap } from 'rxjs';
+import { catchError, map, Observable, of, Subscription, switchMap } from 'rxjs';
 import { Usuario } from '../clases/usuario';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -21,6 +21,7 @@ export class EspecialistaService {
   devuelvoEstado: boolean;
   listPerfil: Perfil[] = [];
   gralPerfil:string;
+  estePerfil = "Especialista";
 
   constructor(public afAuth: AngularFireAuth,
             private afs: AngularFirestore,
@@ -78,8 +79,9 @@ export class EspecialistaService {
     return this.gralPerfil;
   }
 
+  
   isActualSessionEspecialista(){
-    const esperando = this.getPerfil(); //this.perfilBuscado();
+    const esperando = this.estePerfil; //this.estePerfil es Especialista;
     console.log('Imprimo Perfil esperado:', esperando);
 
     if (esperando === 'Especialista') {
@@ -89,5 +91,5 @@ export class EspecialistaService {
       console.log('Paso 8 auth Servicio Especialista -  NO',this.perfil);
       return false;
     }
-  }
+  }   
 }

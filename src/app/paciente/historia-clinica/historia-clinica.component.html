@@ -1,6 +1,6 @@
 <br><br>
 <div class="text-center">
-  <button class="btn btn-secondary btn-lg"(click)="downloadPDF()">Descargar HC en PDF</button>
+  <button class="btn btn-secondary btn-lg"(click)="downloadPDF()">Descargar Historia Clínica en PDF</button>
 </div>
 
 <div *ngIf='!loading' class="container-table table-responsive" id="htmlData">
@@ -15,14 +15,14 @@
     <table class="table table-striped">
         <thead class="thead-Active">
             <tr class="table-dark">
-            <th scope="col">Especialidad</th>
-            <th scope="col">Especialista</th>
-            <th scope="col">Altura</th>
-            <th scope="col">Peso</th>
-            <th scope="col">Presión</th>
-            <th scope="col">Temperatura</th>
+            <th scope="col" class="separador1">Especialidad</th>
+            <th scope="col" class="separador1">Especialista</th>
+            <th scope="col" class="separador1">Altura</th>
+            <th scope="col" class="separador1">Peso</th>
+            <th scope="col" class="separador1">Presión</th>
+            <th scope="col" class="separador1">Temperatura</th>
             <!-- <th scope="col">Fecha</th> -->
-            <th scope="col">Datos Adicioneales</th>
+            <th scope="col" class="separador1">Datos Adicioneales</th>
             </tr>
         </thead>
 
@@ -35,14 +35,14 @@
             </td> -->
             <!--  <td>{{ item.nombre }}</td>
              <td>{{ item.apellido }}</td> -->
-            <td *ngIf="item.estado=='FINALIZADO' ">{{ item.especialidad }}</td>
-            <td *ngIf="item.estado=='FINALIZADO' " >{{ item.nombreEspecialista }} {{item.apellidoEspecialista }}</td>
+            <td *ngIf="item.estado=='FINALIZADO' " class="separador">{{ item.especialidad }}</td>
+            <td *ngIf="item.estado=='FINALIZADO' " class="separador">{{ item.nombreEspecialista }} {{item.apellidoEspecialista }}</td>
             <!-- (click)="mostrarHistoriaClinicaEsp()" -->
-            <td *ngIf="item.estado=='FINALIZADO' ">{{ item.altura }}</td>
-            <td *ngIf="item.estado=='FINALIZADO' ">{{ item.peso }}</td>
-            <td *ngIf="item.estado=='FINALIZADO' ">{{ item.presion }}</td>
-            <td *ngIf="item.estado=='FINALIZADO' ">{{ item.temperatura }}</td>
-            <td *ngIf="item.estado=='FINALIZADO' ">
+            <td *ngIf="item.estado=='FINALIZADO' " class="separador">{{ item.altura }}</td>
+            <td *ngIf="item.estado=='FINALIZADO' " class="separador">{{ item.peso }}</td>
+            <td *ngIf="item.estado=='FINALIZADO' " class="separador">{{ item.presion }}</td>
+            <td *ngIf="item.estado=='FINALIZADO' " class="separador">{{ item.temperatura }}</td>
+            <td *ngIf="item.estado=='FINALIZADO' " class="separador">
             {{ item.clave1}} {{ item.valor1}}<br>
             {{ item.clave2}} {{ item.valor2}}<br>
             {{ item.clave3}} {{ item.valor3}}<br>

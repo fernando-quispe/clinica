@@ -16,7 +16,7 @@
    <div class="row">
     <div class="col">
       <div class="form-group">
-        <input type="text" name="filterPos" class="form-control" placeholder="Buscador ... [ Especialidad o Nombre o Apellido ]"  [(ngModel)]="filterPost">
+        <input type="text" name="filterPos" class="form-control" placeholder="Buscador ... [ Especialidad/Nombre/Apellido/Email/Estado/Dia/Turno]"  [(ngModel)]="filterPost">
       </div>
     </div>
   </div>
@@ -37,9 +37,7 @@
           </tr>
         </thead>        
 
-        <tbody>
-
-          
+        <tbody>          
           <tr class="table-light" *ngFor="let turno of turnos | filterTurnoclinica:filterPost">
             <td class="separador">{{ turno.email }}</td>
             <td class="separador">{{ turno.nombre }}</td>
@@ -48,12 +46,10 @@
             <td class="separador">{{ turno.otraespecialidad }}</td>
             <td class="separador">{{ turno.estado }}</td> 
             <td class="separador">{{ turno.dia }}</td>
-            <td class="separador">{{ turno.turno }}</td>
-                  
+            <td class="separador">{{ turno.turno }}</td>                  
           </tr>
          
         </tbody>
-
       </table>
     </div>
     

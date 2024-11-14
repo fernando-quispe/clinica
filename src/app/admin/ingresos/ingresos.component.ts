@@ -9,7 +9,7 @@ import { ExcelService } from '../../servicios/excel.service';
 @Component({
   selector: 'app-ingresos',
   standalone: true,
-  imports: [NgIf, NgFor, DatePipe, MenuGralComponent, SpinnerComponent],
+  imports: [NgIf, NgFor, MenuGralComponent, SpinnerComponent], //DatePipe
   templateUrl: './ingresos.component.html',
   styleUrl: './ingresos.component.css'
 })

@@ -21,8 +21,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-mis-turnos-especialista',
   standalone: true,
-  imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, FormsModule, CancelarTurnoEspecialistaComponent, FinalizarTurnoEspecialistaComponent,
-            HistoriaClinicaTurnoEspecialistaComponent, ResEspecialistaComponent, FilterEspecialistaPipe, OrdenarArrayPipe ],
+  imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, CancelarTurnoEspecialistaComponent, FinalizarTurnoEspecialistaComponent, ResEspecialistaComponent,
+    HistoriaClinicaTurnoEspecialistaComponent, FormsModule, FilterEspecialistaPipe
+  ],
   templateUrl: './mis-turnos-especialista.component.html',
   styleUrl: './mis-turnos-especialista.component.css'  
 })
@@ -69,7 +70,6 @@ export class MisTurnosEspecialistaComponent implements OnInit {
     private _turnopacienteService: PacienteService, // LO AGREGUE 26 10 
     private router: Router) 
     { 
-
   }
 
   ngOnInit(): void {
@@ -90,7 +90,6 @@ export class MisTurnosEspecialistaComponent implements OnInit {
     this.fotoPerfilUnoPaciente=datoPerfil.fotoPerfilUno;
     this.fotoPerfilDosPaciente=datoPerfil.fotoPerfilDos;
     this.dniPaciente=datoPerfil.dni;
-
     //console.log('Email del Paciente --> ', this.emailEspecialista);
   }
 
@@ -118,8 +117,7 @@ export class MisTurnosEspecialistaComponent implements OnInit {
     this.actualTurno=item;
   }
 
-  aceptarTurno(item: any){
-      //this._usuarioService.aceptarTurnoEspecialista(item.id,'ACEPTADO').then((res) => {});
+  aceptarTurno(item: any){      
       this._usuarioService.aceptarTurnoEspecialista(item.id,'ACEPTADO').then((res) => {});
       Swal.fire({
         position: 'top-end',
@@ -144,5 +142,4 @@ export class MisTurnosEspecialistaComponent implements OnInit {
     //localStorage.removeItem('loggedUser');
     this.router.navigateByUrl('/bienvenido')
   }
-
 }

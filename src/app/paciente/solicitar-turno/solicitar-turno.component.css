@@ -2,7 +2,7 @@
     margin-top: 2rem;
     height: 60rem;
     background-color: #08456b;
-    color: white;
+    color: white;   
 }
 
 #col1{
@@ -28,6 +28,13 @@
     text-align: center;
     height: 13.5rem;
     overflow: auto;
+}
+
+#centrar{
+    display: flex;              /* Habilita flexbox */
+    justify-content: center;    /* Centra el contenido horizontalmente */
+    align-items: center;        /* Centra el contenido verticalmente */
+    height: 100vh;              /* O cualquier altura que desees, puede ser 100% o un valor fijo */
 }
 
 .datos-turno{
@@ -80,29 +87,39 @@
 
 }
 
+/*habia dos
 .foto-especialista{
     width: 40px;
     height: 100%;
     border-radius: 50px;
     border: 1px solid white;
     margin-right: 0.5rem;
-}
+}*/
 
-.foto-especialista{
+/*.foto-especialista{
         margin-left: 3.5rem;
         width: 55px;
         height: 100%;
+}*/
+
+/*cambie el tamaño del cuadrado*/
+.foto-especialista {
+        margin-left: 3.5rem;
+        width: 100px;
+        height: 100px; /* Mismo valor que el ancho */
+        object-fit: cover; /* Asegura que la imagen se recorte y llene el cuadrado */
+        border-radius: 5px; /* Opción para bordes ligeramente redondeados, puedes ajustar o eliminar */
 }
 
 .item-especialista:hover, .item-turno:hover{
     background-color: #556e78;
 }
 
-#btn-solicitar-turno{
+#btn-solicitar-turno-final{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border-radius: 5px;
   margin-top: 1rem;
-  width: 80%;
+  width: 60%;
   height: 2.5rem;
   margin-left: 20%;
   color:  white;
@@ -110,7 +127,7 @@
   border: 1px solid white;
 }
 
-#btn-solicitar-turno:hover{
+#btn-solicitar-turno-final:hover{
     background-color: #556e78;
 }
 
@@ -131,7 +148,7 @@ li{
         width: 100%;
     }
     #contenedor-absoluto    {
-        height: 120rem;
+        height: 120rem;       
     }
 }
 
@@ -312,11 +329,26 @@ li{
     font-size: 19px;
 }
 
+/*
 .foto-especialidad{
     border-radius: 50px;
     width: 50px;
     height: 50px;
     margin-right: 0.6rem;
+}*/
+
+.foto-especialidad {
+        border-radius: 5px; /* Reduce el radio para bordes ligeramente redondeados o pon 0 para bordes rectos */
+        width: 100px; /* Ancho mayor que el alto para un botón rectangular */
+        height: 40px; /* Ajusta la altura para darle forma de botón */
+        margin-right: 0.6rem;
+        display: inline-block; /* Asegura que se comporte como un botón */
+        text-align: center; /* Centra el texto dentro del botón */
+        line-height: 40px; /* Igual que la altura para alinear verticalmente el texto */
+        cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
+        background-color: #007bff; /* Color de fondo del botón, ajusta según prefieras */
+        color: white; /* Color del texto */
+        border: none; /* Quita el borde predeterminado */
 }
 
 .item-especialidad:hover{
@@ -330,4 +362,26 @@ li{
 
 li{
     list-style: none;
+}
+
+/* Estilo para el botón cuadrado */
+#btn-solicitar-turno {
+        width: 120px;           /* Define un ancho fijo */
+        height: 120px;          /* Define una altura fija, igual a la del ancho */
+        padding: 0;             /* Elimina el padding interno */
+        border: 2px solid #007bff; /* Borde de color azul */
+        background-color: #007bff; /* Color de fondo azul */
+        color: white;           /* Color de texto blanco */
+        text-align: center;     /* Centra el texto */
+        font-size: 16px;        /* Tamaño de la fuente */
+        border-radius: 0;       /* Sin bordes redondeados */
+        cursor: pointer;       /* Muestra el cursor como puntero */
+        display: flex;          /* Flexbox para centrar el texto */
+        align-items: center;    /* Centrado vertical */
+        justify-content: center;/* Centrado horizontal */    
+        margin: 10px auto;
+}
+      
+#btn-solicitar-turno:hover {
+      background-color: #0056b3; /* Cambia el color al pasar el ratón */
 }

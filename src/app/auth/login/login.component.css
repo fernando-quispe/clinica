@@ -52,8 +52,8 @@ body {
   /*background: -webkit-linear-gradient(to bottom, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
   /*background: linear-gradient(to bottom, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-image: url(../../../assets/clinica/clinica.jpg);
-  background-size: 100%;
-  background-position: center top;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -138,8 +138,7 @@ h3{
 section {
   background-image: linear-gradient(to left,rgb(168, 200, 230),rgb(116, 214, 231));
   height: 96vh;
-  /*
-  display: flex;
+  /*display: flex;
   align-items: center;
   justify-content: center;
   height: 90vh;

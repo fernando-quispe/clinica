@@ -17,7 +17,9 @@ export class FilterPipe implements PipeTransform {
     for (const post of value ) {
       if (post.especialidad.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
           post.nombreEspecialista.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
-          post.apellidoEspecialista.toLowerCase().indexOf(arg.toLowerCase()) > -1)  {
+          post.apellidoEspecialista.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+          post.fechaSolicitada.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+          post.estado.toLowerCase().indexOf(arg.toLowerCase()) > -1 )  {
 
         resultFilter.push(post);
       }

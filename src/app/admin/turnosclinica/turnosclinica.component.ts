@@ -24,8 +24,7 @@ import { FilterTurnoclinicaPipe } from '../../shared/pipes/filter-turnoclinica.p
 @Component({
   selector: 'app-turnosclinica',
   standalone: true,
-  imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, FormsModule, CancelarTurnoEspecialistaComponent, FinalizarTurnoEspecialistaComponent,
-            HistoriaClinicaTurnoEspecialistaComponent, ResEspecialistaComponent, FilterEspecialistaPipe, OrdenarArrayPipe, FilterTurnoclinicaPipe],
+  imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, FormsModule, FilterTurnoclinicaPipe],
   templateUrl: './turnosclinica.component.html',
   styleUrl: './turnosclinica.component.css'
 })

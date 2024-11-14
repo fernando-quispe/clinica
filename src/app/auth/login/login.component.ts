@@ -14,13 +14,30 @@ import { SpinnerComponent } from '../../shared/spinner/spinner.component';
 import { NgIf } from '@angular/common';
 import { AuthService } from '../../servicios/auth.service';
 import { LogService } from '../../servicios/log.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { EspecialidadService } from '../../servicios/especialidad.service';
+import { EspecialistaService } from '../../servicios/especialista.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [SpinnerComponent, ReactiveFormsModule, NgIf],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  animations: [
+    trigger('enterState',[
+      state('void',style({
+        transform: 'translateX(100%)',
+        opacity:0
+      })),
+      transition(':enter',[
+        animate(500,style({
+          transform:'translateX(0)',
+          opacity:1
+        }))
+      ])
+    ])
+  ]    
 })
 
 export class LoginComponent implements OnInit {
@@ -117,7 +134,6 @@ export class LoginComponent implements OnInit {
         console.error('Error al guardar ingreso en Firestore: ', error);
       });
       //fin
-
         if (respuesta.user?.emailVerified === false) {
           this.loading = false;
           this.rutas.navigate(['/auth/verificarCorreo']);
@@ -249,6 +265,4 @@ export class LoginComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     // no hay dato que se modifique
   }
-
-
 }

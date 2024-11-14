@@ -6,7 +6,7 @@
     <br>
 
     
-    <h3 class="text-center p-3">Usuario - Historia Clínica</h3>
+    <h3 class="text-center p-3">Datos de los Usuarios</h3>
 
     <div class="box text-center">
       <button  class="btn btn-primary btn-lg float-right" (click)="exportexcel()">Descargar EXCEL - Pacientes</button>
@@ -19,32 +19,32 @@
       <table class="table table-striped">
         <thead class="thead-Active">
           <tr class="table-dark">
-            <th scope="col">Foto</th>
+            <th class="separador1" scope="col">Foto</th>
             <!-- <th scope="col">Nombre</th>
             <th scope="col">Apellido</th> -->
-            <th scope="col">Edad</th>
-            <th scope="col">Altura</th>
-            <th scope="col">Peso</th>
-            <th scope="col">Temperatura</th>
-            <th scope="col">Presión</th>
-            <th scope="col">Datos</th>
+            <th class="separador1" scope="col">Edad</th>
+            <th class="separador1" scope="col">Altura</th>
+            <th class="separador1" scope="col">Peso</th>
+            <th class="separador1" scope="col">Temperatura</th>
+            <th class="separador1" scope="col">Presión</th>
+            <th class="separador1" scope="col">Datos</th>
           </tr>
         </thead>
         
 
         <tbody>
           <tr class="table-light" *ngFor="let item of listaUsuarioPaciente">
-            <td>
+            <td class="separador">
                <img [src]="'../../../'+item.fotoPerfilUno" alt="Especialista {{ item.nombre +' ' + item.apellido }}" />
                {{ item.nombre +' ' + item.apellido }}
             </td>
            <!--  <td>{{ item.nombre }}</td>
             <td>{{ item.apellido }}</td> -->
-            <td>{{ item.edad }}</td>
-            <td>{{ item.altura }}</td>
-            <td>{{ item.peso }}</td>
-            <td>{{ item.temperatura }}</td>
-            <td>{{ item.presion }}</td>
+            <td class="separador">{{ item.edad }}</td>
+            <td class="separador">{{ item.altura }}</td>
+            <td class="separador">{{ item.peso }}</td>
+            <td class="separador">{{ item.temperatura }}</td>
+            <td class="separador">{{ item.presion }}</td>
             <!-- <div class="scrollbar-especialidades">
               <td>
                 <table class="table table-bordered table-striped mb-0">
@@ -59,7 +59,7 @@
                 </table>
               </td>
             </div> -->
-            <td>
+            <td class="separador">
               <!--<p class="btn-success" *ngIf="!item.valor1==''" >{{ item.clave1 }} : {{ item.valor1 }}</p>
               <p class="btn-success" *ngIf="!item.valor2==''" >{{ item.clave2 }} : {{ item.valor2 }}</p>
               <p class="btn-success" *ngIf="!item.valor3==''" >{{ item.clave3 }} : {{ item.valor3 }}</p>-->

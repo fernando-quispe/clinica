@@ -8,3 +8,13 @@
     font-size: 17px;
     box-shadow: 2px 2px 5px #999;
 }
+
+.separador {
+    border-bottom: 1px solid #b4b4b4;
+    margin: 10px 0;
+}
+
+.separador1 {
+    border-bottom: 1px solid #474747;
+    margin: 10px 0;
+}

@@ -7,7 +7,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-menu-gral',
   standalone: true,
-  imports: [NgIf, RouterModule, RouterLink, RouterLinkActive, RouterOutlet],
+  imports: [NgIf],
   templateUrl: './menu-gral.component.html',
   styleUrl: './menu-gral.component.css'
 })

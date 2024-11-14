@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
- /* codigo opciol */
+/* codigo opciol */
 body {
     width: 100%;
     height: 100vh;
@@ -29,6 +29,7 @@ body {
     /*height: 70vh; */
 }
 
+/*
 .card{
     width: 100%;
     margin: 20px;
@@ -38,16 +39,38 @@ body {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2) ;
     cursor: default;
     transition: all 40ms ease;
+}*/
+
+.card {
+    border-radius: 0; /* Hace que las esquinas sean completamente rectangulares */
+    border: 1px solid #ccc; /* Añade un borde para resaltar la tarjeta */
+    width: 4300px; /* Ancho de la tarjeta, ajusta según tus necesidades */
+    margin: 20px;    
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2) ;
+    cursor: default;
+    transition: all 40ms ease;
 }
+  
+/*.container {
+    padding: 15px;
+}*/
 
 .card:hover{
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-3%);
 }
 
+/*cambio 0711*/
 .card img{
-    width: 100%;
-    height: 210px;
+    /*width: 100%;*/
+    width: 310px;
+    height: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .card .contenido{

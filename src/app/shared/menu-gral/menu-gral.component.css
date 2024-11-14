@@ -41,3 +41,7 @@
   .texto-blanco {
     color: white;       
   }
+
+  .button {
+    cursor: pointer;
+  }
