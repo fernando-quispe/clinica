@@ -5,26 +5,26 @@
       <app-spinner></app-spinner>
     </div>
     <br><br>
-    
+   
     <div>
       <img [src]="'../../../'+this.fotoPerfilUnoPaciente" alt="{{ this.nombrePaciente +' ' + this.apellidoPaciente }}" />
                  {{ this.nombrePaciente +' ' + this.apellidoPaciente }}
     </div>
     
-    <h3 class="text-center p-3">Mis Turnos</h3>
-
+    <h3 class="text-center p-3" appResaltar>Mis Turnos</h3>
+    
     <!-- Filtro-->
-    <div class="row">
-      <div class="col">
+    <div class="row" >
+      <div class="col" >
         <div class="form-group">
           <input type="text" name="filterPos" class="form-control" placeholder="Buscador ... [ Especialidad/Especialista/Fecha/Estado ]" [(ngModel)]="filterPost">
         </div>
       </div>
     </div>
 
-    <div *ngIf='!loading' class="container-table table-responsive">
+    <div *ngIf='!loading' class="container-table table-responsive" >
       <!-- <table class="table table-bordered table-striped mx-auto"> -->
-      <table class="table table-striped">
+      <table class="table table-striped" >
         <thead class="thead-Active">
           <tr class="table-dark">
             <th scope ="col" class="separador1">Foto Especialista</th>

@@ -40,7 +40,7 @@
                {{ item.nombrePaciente +' ' + item.apellidoPaciente }}
             </td>
             <td class="separador">
-              <button class="btn-success" *ngIf="item.resena!='' " (click)="verHC(item)">DETALLE TURNO</button>
+              <button class="btn-success" *ngIf="item.resena!='' " (click)="verHC(item)">HISTORIA CLINICA DEL TURNO</button>
               <button class="btn-success" *ngIf="item.resena!='' " (click)="verResena(item)">VER RESEÑA</button>
             </td>
            <!--  <td>{{ item.nombre }}</td>

@@ -31,7 +31,7 @@ export const appConfig: ApplicationConfig = {
       routes, 
       withHashLocation(), 
       withViewTransitions()), 
-    importProvidersFrom(RecaptchaV3Module),
+    //importProvidersFrom(RecaptchaV3Module),
     provideFirebaseApp(() => initializeApp({"projectId":"tp2clinica",
                                             "appId":"1:798331900574:web:9134b7ba2eb8310660618f",
                                             "storageBucket":"tp2clinica.appspot.com",
@@ -47,7 +47,7 @@ export const appConfig: ApplicationConfig = {
                                             "apiKey":"AIzaSyA3hUfi22aOY41bdma_O5BYUkchwNa6ScM",
                                             "authDomain":"tp2clinica.firebaseapp.com",
                                             "messagingSenderId":"798331900574"})),
-    provideFirestore(() => getFirestore()),
+    provideFirestore(() => getFirestore()), 
     provideAnimations(),
     provideAnimationsAsync(),
     //agregado
@@ -56,6 +56,6 @@ export const appConfig: ApplicationConfig = {
       AngularFireModule.initializeApp(environment.firebase),
       AngularFirestoreModule      
     ),
-    {provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LcolngqAAAAAGMCSd7kX9uvOTN0KN1mQJvOBuZ8'}
+    {provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LfwMoEqAAAAAPR_rdapYQyJ7aZV5Ll6Q30DLVJD'}
   ]  
 };

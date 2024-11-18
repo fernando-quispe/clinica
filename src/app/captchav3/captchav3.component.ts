@@ -10,6 +10,7 @@ import { RecaptchaCommonModule } from 'ng-recaptcha/lib/recaptcha-common.module'
   templateUrl: './captchav3.component.html',
   styleUrl: './captchav3.component.css'
 })
+
 export class Captchav3Component {
 
   recaptchaService = inject(ReCaptchaV3Service);
@@ -22,5 +23,5 @@ export class Captchav3Component {
 
   executeRecaptchaVisible(token:any){
     console.log(token);
-}
+  }
 }

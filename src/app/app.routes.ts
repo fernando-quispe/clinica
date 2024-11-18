@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
 import { BienvenidoLoginComponent } from './bienvenido-login/bienvenido-login.component';
+import { ResaltarDirective } from './directivas/resaltar.directive';
 
 export const routes: Routes = [
     
@@ -23,9 +24,9 @@ export const routes: Routes = [
     { path: '**', pathMatch: 'full', redirectTo: 'bienvenidoLogin' }
 ];
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+@NgModule({  
+    imports: [RouterModule.forRoot(routes), ResaltarDirective],
+    exports: [RouterModule, ResaltarDirective]
   })
 
 export class AppRoutingModule { }

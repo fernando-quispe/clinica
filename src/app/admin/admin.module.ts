@@ -12,7 +12,7 @@ import { SolicitarTurnoComponent } from '../paciente/solicitar-turno/solicitar-t
 import { TurnosclinicaComponent } from './turnosclinica/turnosclinica.component';
 import { LogReportComponent } from './log-report/log-report.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
-
+import { BaseChartDirective } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { IngresosComponent } from './ingresos/ingresos.component';
     //MiPerfilComponent,
     //GenerarUsuarioAdminComponent,
     //UsuaiosComponent
-    //solicitarTurnosAdmComponent,
+    //solicitarTurnosAdmComponent,  
   ],
   exports:[
     HabilitarInhabilitarCuentaComponent,
@@ -30,7 +30,8 @@ import { IngresosComponent } from './ingresos/ingresos.component';
     SolicitarTurnoComponent,
     TurnosclinicaComponent,
     LogReportComponent,
-    IngresosComponent
+    IngresosComponent,
+    BaseChartDirective    
   ],
   imports: [
     CommonModule,
@@ -45,7 +46,8 @@ import { IngresosComponent } from './ingresos/ingresos.component';
     SolicitarTurnoComponent,
     TurnosclinicaComponent,
     LogReportComponent,
-    IngresosComponent    
+    IngresosComponent,
+    BaseChartDirective 
   ]
 })
 

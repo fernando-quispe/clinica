@@ -9,6 +9,8 @@ import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.co
 import { LoginRegistrarAdminComponent } from './login-registrar-admin/login-registrar-admin.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IngresosComponent } from '../admin/ingresos/ingresos.component';
+import { CaptchamioDirective } from '../directivas/captchamio.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     //LoginRegistrarUsuarioComponent,
     //VerificarCorreoComponent,
     //LoginRegistrarAdminComponent,
+    
   ],  
   exports:[
     LoginComponent,
@@ -25,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuRegistrarComponent,
     LoginRegistrarUsuarioComponent,
     VerificarCorreoComponent,
-    LoginRegistrarAdminComponent
+    LoginRegistrarAdminComponent,
+    CaptchamioDirective
   ],
   imports: [
     CommonModule,
@@ -38,7 +42,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuRegistrarComponent,
     LoginRegistrarUsuarioComponent,
     VerificarCorreoComponent,
-    LoginRegistrarAdminComponent
+    LoginRegistrarAdminComponent,
+    CaptchamioDirective
   ]
 })
 

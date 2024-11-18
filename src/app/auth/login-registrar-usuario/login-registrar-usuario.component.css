@@ -109,3 +109,15 @@ div .botones_resultados{
 .colorTexto{
     color:#ffffff;
 }
+
+/*1711*/
+div[appCaptchamio] {
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+}
+  
+input {
+    padding: 5px;
+    font-size: 16px;
+}

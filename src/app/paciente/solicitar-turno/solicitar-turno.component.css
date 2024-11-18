@@ -105,8 +105,8 @@
 /*cambie el tamaño del cuadrado*/
 .foto-especialista {
         margin-left: 3.5rem;
-        width: 100px;
-        height: 100px; /* Mismo valor que el ancho */
+        width: 50px;
+        height: 50px; /* Mismo valor que el ancho */
         object-fit: cover; /* Asegura que la imagen se recorte y llene el cuadrado */
         border-radius: 5px; /* Opción para bordes ligeramente redondeados, puedes ajustar o eliminar */
 }

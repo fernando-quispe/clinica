@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
 
   /* automaticoLogin(){
     this.loginForm.controls['usuarioCorreo'].setValue('danny@gmail.com');
-    this.loginForm.controls['usuarioClave'].setValue('pepe123');
+    this.loginForm.controls['usuarioClave'].setValue('123456');
   } */
 
   administradorLogin(){

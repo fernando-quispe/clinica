@@ -52,7 +52,7 @@
     </div>
     <div class="contenedorBoton">
       <button routerLink="/bienvenido" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
-      <button (click)="mostrarHistoriaClinica()" class="btn btn-secondary btn-lg" >Ver Historia Clínica</button>
+      <button (click)="mostrarHistoriaClinica()" class="btn btn-secondary btn-lg" appBotonhc>Ver Historia Clínica</button>
       <!-- <button (click)="mostrarHistoriaClinicaEsp()" class="btn btn-secondary btn-lg" >Ver HC Esp</button> -->
     </div>
     <app-historia-clinica *ngIf="verHistoriaClinica==true"></app-historia-clinica>

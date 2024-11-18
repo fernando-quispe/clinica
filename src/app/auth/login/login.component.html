@@ -25,10 +25,10 @@
                 <br>
                 <span class="text-danger"
                 *ngIf="loginForm.get('usuarioCorreo')?.hasError('required') && loginForm.get('usuarioCorreo')?.touched">
-                  El correo  electrónico<strong>es requerido</strong>
+                  El correo  electrónico<strong> es requerido</strong>
                 </span>
                 <span class="text-danger" *ngIf="loginForm.get('usuarioCorreo')?.hasError('email') && loginForm.get('usuarioCorreo')?.touched">
-                  El correo electrónico<strong>es inválido</strong>
+                  El correo electrónico<strong> es inválido</strong>
                 </span>
               </div>
 

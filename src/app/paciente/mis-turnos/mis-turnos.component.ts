@@ -16,12 +16,13 @@ import { CalificarTurnoComponent } from '../calificar-turno/calificar-turno.comp
 import { ResenaTurnoComponent } from '../resena-turno/resena-turno.component';
 import { EncuestaTurnoComponent } from '../encuesta-turno/encuesta-turno.component';
 import { FilterPipe } from "../../shared/pipes/filter.pipe";
+import { ResaltarDirective } from '../../directivas/resaltar.directive';
 
 @Component({
   selector: 'app-mis-turnos',
   standalone: true,
   imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, FormsModule, CancelarTurnoComponent, CalificarTurnoComponent,
-            ResenaTurnoComponent, EncuestaTurnoComponent, CommonModule, FilterPipe],
+            ResenaTurnoComponent, EncuestaTurnoComponent, CommonModule, FilterPipe, ResaltarDirective],
   templateUrl: './mis-turnos.component.html',
   styleUrl: './mis-turnos.component.css'
 })

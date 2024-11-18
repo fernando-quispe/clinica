@@ -108,3 +108,14 @@
   .colorTexto{
     color:#ffffff;
   }
+
+  div[appCaptchamio] {
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  input {
+    padding: 5px;
+    font-size: 16px;
+  }

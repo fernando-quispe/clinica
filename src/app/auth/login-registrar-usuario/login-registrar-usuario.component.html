@@ -1,5 +1,6 @@
 <!-- <app-captchav3></app-captchav3>
-<router-outlet></router-outlet>-->
+<router-outlet></router-outlet>
+<app-captchamio></app-captchamio>-->
 
 <div class="conteiner">
 
@@ -12,7 +13,7 @@
             <!-- <div class="card"> -->
                 <!-- <div class=" ody"> -->
                     <h2 class="text-center tituloPropio" style="color: white" ><strong>REGISTRO DE PACIENTE</strong></h2>
-                    <form [formGroup]="registrarForm" (ngSubmit)="registrar()">
+                    <form [formGroup]="registrarForm" (ngSubmit)="registrar()"> 
 
                     <div class="row formulario">
                         <!--Nombre-->
@@ -104,16 +105,48 @@
                             <span class="input-group-text" >PERFIL</span>
                             <input type="file" (change)="uploadImage2($event)" class="form-control form-control-lg" formControlName="fotoPerfil2">
                         </div>
-                        <!-- re captcha -->
-                        <div class="form-group">
-                            <re-captcha formControlName="captcha" [siteKey]="'6LcDnXgqAAAAABoVFJU6wvtFmhQX7InVYLLhiDi6'" (resolved)="onCaptchaResolved($event)"
-                              required></re-captcha>
 
-                              <!--  <span class="text-danger" *ngIf="registrarForm.get('captcha')?.hasError('required') && registrarForm.get('captcha')?.touched">
+                        <!--Captcha-->
+                        <div class="col-md-6 mb-2">
+                            <div appCaptchamio [question]="'¿Cuánto es 5 + 3?'" [correctAnswer]="'8'" (validation)="onCaptchaValidation($event)" formControlName="captcha">
+                            </div>              
+                            <span class="text-danger" *ngIf="registrarForm.get('captcha')?.hasError('required') && registrarForm.get('captcha')?.touched">
+                              El Captcha <strong>es requerido</strong>
+                            </span>         
+                            <span class="text-danger" *ngIf="registrarForm.get('captcha')?.hasError('isCaptchaWithParam') && registrarForm.get('captcha')?.touched">
+                              Captcha <strong>debe ser igual</strong>
+                            </span>                       
+                            <p *ngIf="captchaValidated" class="text-success">Captcha validado correctamente 🎉</p>                      
+                            <p *ngIf="!captchaValidated && captchaValidated !== null" class="text-danger">Respuesta incorrecta ❌</p>
+                        </div> 
+                          
+                        <!--1711 ultimo<div class="form-group" formGroupName="registrarForm">
+                            <div formControlName="captcha">
+                                <div appCaptchamio [question]="'¿Cuánto es 5 + 3?'" [correctAnswer]="'8'" (validation)="onCaptchaValidation($event)">
+                                </div>
+                                <p *ngIf="captchaValidated" class="text-success">Captcha validado correctamente 🎉</p>
+                                <p *ngIf="!captchaValidated && captchaValidated !== null" class="text-danger">Respuesta incorrecta ❌</p>   
+                            </div>
+                        </div>-->
+
+                        <!-- re captcha 
+                        <div class="form-group">
+                            <re-captcha formControlName="captcha" [siteKey]="'6LfwMoEqAAAAAPR_rdapYQyJ7aZV5Ll6Q30DLVJD'" (resolved)="onCaptchaResolved($event)"required></re-captcha>-->
+                            <!--<re-captcha formControlName="captcha" [siteKey]="'6LcDnXgqAAAAABoVFJU6wvtFmhQX7InVYLLhiDi6'" (resolved)="onCaptchaResolved($event)"
+                              required></re-captcha> lo saque 1611-->                
+                            <!--  <span class="text-danger" *ngIf="registrarForm.get('captcha')?.hasError('required') && registrarForm.get('captcha')?.touched">
                                 El captcha <strong>es requerido</strong>
                             </span>-->
-                        </div>
-
+                            <!--ultimo1611<form (ngSubmit)="onSubmit()">
+                                <re-captcha 
+                                  (resolved)="onCaptchaResolved($event)" 
+                                  siteKey="6LfwMoEqAAAAAPR_rdapYQyJ7aZV5Ll6Q30DLVJD">
+                                </re-captcha>
+                                <button type="submit" [disabled]="!captchaResolved">Enviar</button>
+                              </form>-->         
+                        <!-- </div>  class="form-group" formControlName="captcha"-->                     
+                                  
+                        
                         <!--Captcha directiva
                         <div class="captcha-container">
                             <p appCaptcha [userAnswer]="userCaptchaAnswer" (captchaResolved)="onCaptchaResolved($event)"></p>
@@ -124,8 +157,11 @@
                             <p *ngIf="captchaPassed === false">Respuesta incorrecta, intenta de nuevo.</p>
                         </div>-->
 
+
+
                     </div>
                     <button routerLink="/auth/login" class="btn btn-secondary btn-lg">Registrar</button>
+                    <button routerLink="/auth/login" (click)="volver()" class="btn btn-secondary btn-lg">Volver</button>
                     <!--<button type="submit" [disabled]="registrarForm.invalid" class="btn btn-primary btn-lg float-right">Aceptar</button>-->
                     <!--<button type="submit" [disabled]="loading || !registrarForm.valid">Registrar</button>-->
                     </form>

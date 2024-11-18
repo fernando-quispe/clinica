@@ -16,7 +16,7 @@ const routes: Routes = [
   /*{ path: 'finalizarTurno', component: FinalizarTurnoComponent,canActivate: [EspecialistaGuard,EspecialistaAutorizadoGuard]},*/
   { path: 'crearTurnos', component: CrearTurnosComponent,canActivate: [EspecialistaGuard,EspecialistaAutorizadoGuard]},
   /*{ path: 'resEsp', component: ResEspecialistaComponent} //canActivate: [EspecialistaGuard,EspecialistaAutorizadoGuard]},*/
-  { path: 'perfilEsp', component: PerfilEspecialistaComponent,canActivate: [EspecialistaGuard,EspecialistaAutorizadoGuard]},
+  { path: 'perfilEsp', component: PerfilEspecialistaComponent,canActivate: [EspecialistaGuard,EspecialistaAutorizadoGuard], data: { animation: 'perfil' }},
   { path: 'misPacientes', component: MisPacientesComponent,canActivate: [EspecialistaGuard,EspecialistaAutorizadoGuard]},
   { path: '', redirectTo: 'bienvenidoLogin', pathMatch: 'full' },
   { path: '**', pathMatch: 'full', redirectTo: 'bienvenidoLogin' }

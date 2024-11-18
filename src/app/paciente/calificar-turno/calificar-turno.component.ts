@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { UsuarioService } from '../../servicios/usuario.service';
 import Swal from 'sweetalert2';
 import { NgIf } from '@angular/common';
+import { ResaltarDirective } from '../../directivas/resaltar.directive';
 
 @Component({
   selector: 'app-calificar-turno',

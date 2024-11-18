@@ -7,11 +7,14 @@ import { HistoriaClinicaTurnoEspecialistaComponent } from '../../especialista/hi
 import { HistoriaClinicaComponent } from '../historia-clinica/historia-clinica.component';
 import { HistoriaClinicaEspComponent } from '../historia-clinica-esp/historia-clinica-esp.component';
 import { Router } from '@angular/router';
+import { ResaltarDirective } from '../../directivas/resaltar.directive';
+import { BotonhcDirective } from '../../directivas/botonhc.directive';
+import { BotondescargarhcDirective } from '../../directivas/botondescargarhc.directive';
 
 @Component({
   selector: 'app-perfil-paciente',
   standalone: true,
-  imports: [MenuGralComponent, SpinnerComponent, NgIf, HistoriaClinicaComponent],
+  imports: [MenuGralComponent, SpinnerComponent, NgIf, HistoriaClinicaComponent, BotonhcDirective],
   templateUrl: './perfil-paciente.component.html',
   styleUrl: './perfil-paciente.component.css'
 })

@@ -6,11 +6,13 @@ import { CancelarTurnoPaciente } from '../../interfaces/cancelar-turno-paciente'
 import { UsuarioService } from '../../servicios/usuario.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { BotonhcDirective } from '../../directivas/botonhc.directive';
+import { BotondescargarhcDirective } from '../../directivas/botondescargarhc.directive';
 
 @Component({
   selector: 'app-historia-clinica',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor, BotondescargarhcDirective],
   templateUrl: './historia-clinica.component.html',
   styleUrl: './historia-clinica.component.css'
 })

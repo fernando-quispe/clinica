@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Especialidad } from '../../clases/especialidad';
@@ -14,11 +14,14 @@ import { Usuario } from '../../clases/usuario';
 import Swal from 'sweetalert2';
 import { NgIf } from '@angular/common';
 import { SpinnerComponent } from '../../shared/spinner/spinner.component';
+import { RecaptchaComponent, RecaptchaModule, ReCaptchaV3Service } from 'ng-recaptcha';
+import { Captchav3Component } from '../../captchav3/captchav3.component';
+import { CaptchamioDirective } from '../../directivas/captchamio.directive';
 
 @Component({
   selector: 'app-login-registrar',
   standalone: true,
-  imports: [NgIf, SpinnerComponent, ReactiveFormsModule],
+  imports: [NgIf, SpinnerComponent, ReactiveFormsModule, RecaptchaModule, CaptchamioDirective],
   templateUrl: './login-registrar.component.html',
   styleUrl: './login-registrar.component.css'
 })
@@ -29,7 +32,18 @@ export class LoginRegistrarComponent implements OnInit {
   suscriptionList: Subscription = new Subscription();
   listEspecialidad: Especialidad[] = [];
   public obtengoFile: string;
-  captchaGenerado: string;
+  captchaGenerado: string;  
+  //new 0711
+  userCaptchaAnswer: number | null = null; // Almacena la respuesta del usuario
+  captchaPassed: number | null = null; // Indica si el CAPTCHA fue resuelto
+  //captchaPassed: boolean = false;
+  correctAnswer: number = 0; // Respuesta correcta de la directiva
+  recaptchaService: any; 
+  // 1611 recaptchaService = inject(ReCaptchaV3Service);
+  //1711
+  captchaValidated: boolean | null = null; // Estado de validación del captcha
+  //1611
+  captchaResolved = false;
 
   constructor(private fb: FormBuilder,
               private afAuth : AngularFireAuth,
@@ -37,10 +51,11 @@ export class LoginRegistrarComponent implements OnInit {
               private toastr: ToastrService,
               private _errorService: ErrorService,
               private _especialidadService: EspecialidadService,
-              private _usuarioService: UsuarioService,
-              private _captcha: CaptchaService) {
-                this.captchaGenerado = this._captcha.pickearPalabraRandom();
-                console.log(this.captchaGenerado);
+              private _usuarioService: UsuarioService)
+              //private _captcha: CaptchaService) 1611
+              {
+                //this.captchaGenerado = this._captcha.pickearPalabraRandom();1611
+                //console.log(this.captchaGenerado);1611
                 this.registrarForm = this.fb.group({
                   nombre: ['',[Validators.required,Validators.minLength(4), this.validarLetra]],
                   apellido: ['',[Validators.required,Validators.minLength(4), this.validarLetra]],
@@ -51,13 +66,35 @@ export class LoginRegistrarComponent implements OnInit {
                   fotoPerfil: ['',[Validators.required]],
                   correo: ['',[Validators.required, Validators.email]],
                   password: ['',[Validators.required, Validators.minLength(6)]],
-                  repetirPassword: [''],
-                  captcha:['',[Validators.required,MyValidations.isCaptchaWithParam(this.captchaGenerado)]],
+                  repetirPassword: [''],                 
+                  //captcha: ['', Validators.required]
+                  captcha: ['', [Validators.required, this.captchaValidator.bind(this)]], // Agrega validación 1711
                 }, { validator: this.ckeckPassword })
   }
 
   ngOnInit(): void {
-    this.getEspecialidad();
+    this.getEspecialidad();   
+  }
+
+  // Método para manejar la validación del captcha
+  onCaptchaValidation(isValid: boolean): void {
+    this.captchaValidated = isValid;  // Establece el estado del captcha
+    const captchaControl = this.registrarForm.get('captcha');
+  
+    if (isValid) {
+      captchaControl?.setValue('valid');  // Establece un valor "valid" cuando el captcha es válido
+      captchaControl?.setErrors(null);  // Elimina cualquier error anterior
+    } else {
+      captchaControl?.setValue('');  // Si el captcha es inválido, restablece el valor
+      captchaControl?.setErrors({ isCaptchaWithParam: true });  // Marca el campo como inválido
+    }
+  }
+
+  captchaValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    if (this.captchaValidated === null || !this.captchaValidated) {
+      return { isCaptchaWithParam: true };  // Si no se ha validado, marcar como error
+    }
+    return null;  // Si el captcha es válido, no hay error
   }
 
   /* validateCaptch() {
@@ -70,11 +107,31 @@ export class LoginRegistrarComponent implements OnInit {
     }
     //return captch === confirmarCaptch ? null : { notSame: true }
   } */
+  
+  // Método para manejar la respuesta de reCAPTCHA lo saque 1611
+  onCaptchaResolved(captchaResponse: string | null): void {
+    this.registrarForm.patchValue({
+      captcha: captchaResponse
+    });
+}
+  // Método de registro lo saque 16 11
+  async registrar(){
+    if (!this.registrarForm.get('captcha')?.value) {
+      console.log('grabrar no paso el captcha '); //se queda aca
+      this.toastr.error('Debe completar el reCAPTCHA antes de continuar', 'Error');
+      return;
+    }    
+    console.log('grabrarSegundaParte0 ');
+    this.registrarEspecialista();
+    console.log('grabrarSegundaParte3 ');
+    this.router.navigate(['auth/login']);
+  }
 
+  /* lo saque 1611
   registrar(){
     this.registrarEspecialista();
     this.router.navigate(['auth/login']);
-  }
+  }*/
 
   async registrarEspecialista(){
      const datoEspecialista: Usuario = {
@@ -201,4 +258,20 @@ export class LoginRegistrarComponent implements OnInit {
     }
     return null;
   }
+
+  volver() {
+    //localStorage.removeItem('loggedUser');
+    this.router.navigateByUrl('/auth/login')
+  }
+
+  //1611
+  executeRecaptcha(){
+    this.recaptchaService.execute('').subscribe((token)=> {
+      console.log(token)
+    } )
+  }
+
+  executeRecaptchaVisible(token:any){
+    console.log(token);
+  } 
 }
