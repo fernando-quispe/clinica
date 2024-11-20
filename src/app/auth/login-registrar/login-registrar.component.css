@@ -107,6 +107,12 @@
   
   .colorTexto{
     color:#ffffff;
+    font-weight: bold;
+  }
+
+  .colorTexto1{
+    color:#1bad0e;
+    font-weight: bold;
   }
 
   div[appCaptchamio] {

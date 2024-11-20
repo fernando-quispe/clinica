@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-crear-turnos',
   standalone: true,
-  imports: [MenuGralComponent, SpinnerComponent, NgIf, NgFor, OrdenarArrayPipe],
+  imports: [SpinnerComponent, NgIf, NgFor, OrdenarArrayPipe],
   templateUrl: './crear-turnos.component.html',
   styleUrl: './crear-turnos.component.css'
 })

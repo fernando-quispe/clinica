@@ -1,0 +1,46 @@
+<app-menu-gral></app-menu-gral>
+
+<div class="conteiner mt-3">
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br>    
+    <h3 class="text-center p-3">Lista de Turnos Finalizados</h3>
+
+    <div class="box text-center">
+      <button  class="btn btn-primary btn-lg float-right" (click)="downloadExcel()">Exportar a Excel</button>
+    </div>
+    <br><br><br>
+
+    <div *ngIf='!loading' class="container-table table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-Active">
+          <tr class="table-dark">
+            <th class="separador1" scope="col">Nombre Especialista</th>            
+            <th class="separador1" scope="col">Apellido Especialista</th>
+            <th class="separador1" scope="col">Especialidad</th>              
+            <th class="separador1" scope="col">Fecha Solicitada</th>
+            <th class="separador1" scope="col">Estado</th>            
+          </tr>
+        </thead> 
+        <tbody>
+          <tr class="table-light" *ngFor="let turno of turnopaciente">
+            <td class="separador">{{ turno.nombreEspecialista }}</td>          
+            <td class="separador">{{ turno.apellidoEspecialista }}</td>
+            <td class="separador">{{ turno.especialidad }}</td>       
+            <td class="separador">{{ turno.fechaSolicitada }}</td>    
+            <td class="separador">
+                <!-- Indicador de finalización -->
+                <span *ngIf="!turno.finalizado" class="badge bg-success">Finalizado</span>
+                <span *ngIf="turno.finalizado" class="badge bg-warning">Pendiente</span>
+              </td>              
+            
+          </tr>         
+        </tbody>
+      </table>
+    </div> 
+    
+    <div class="box text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-primary btn-lg">Volver</button>      
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { from, map, Observable, Subscription } from 'rxjs';
 import { Usuario } from '../../clases/usuario';
 import { Perfil } from '../../interfaces/perfil';
 import { Router } from '@angular/router';
@@ -17,6 +17,7 @@ import { LogService } from '../../servicios/log.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { EspecialidadService } from '../../servicios/especialidad.service';
 import { EspecialistaService } from '../../servicios/especialista.service';
+import { collection, getDocs, getFirestore, query, where } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-login',
@@ -93,22 +94,45 @@ export class LoginComponent implements OnInit {
     this.loginForm.controls['usuarioClave'].setValue('123456');
   }
 
-  loginSiguiente(){
-      console.log('Entramos en loginSiguiente ',this.loginForm)
-      const usuario = this.loginForm.get('usuarioCorreo')?.value;
-      const password = this.loginForm.get('usuarioClave')?.value;
 
-      //0511
-      const fechaActual = new Date();
-      const fecha = fechaActual.toLocaleDateString(); // Ejemplo: '01/01/2024'
-      const hora = fechaActual.toLocaleTimeString();  // Ejemplo: '10:30:15 AM'
+ // Esta es la versión moderna de la función
+ checkEmailExists(email: string): Observable<boolean> {
+  const db = getFirestore(); // Esto obtiene la instancia de Firestore
+  const usersRef = collection(db, 'usuarios'); // Referencia a la colección 'usuarios'
+  const q = query(usersRef, where('email', '==', email)); // Creamos la consulta para buscar el correo
+
+  return from(getDocs(q)).pipe(
+    map((snapshot) => !snapshot.empty) // Retorna 'true' si existe el correo, 'false' si no
+  );
+  }
+
+
+  loginSiguiente(){
+    console.log('Entramos en loginSiguiente ',this.loginForm)
+    const usuario = this.loginForm.get('usuarioCorreo')?.value;
+    const password = this.loginForm.get('usuarioClave')?.value;
+
+    //0511
+    const fechaActual = new Date();
+    const fecha = fechaActual.toLocaleDateString(); // Ejemplo: '01/01/2024'
+    const hora = fechaActual.toLocaleTimeString();  // Ejemplo: '10:30:15 AM'
       
-      this.loading = true;
-      setTimeout(() => {
-        console.log('Tiempo');
-      }, 500000);
+    this.loading = true;
+    setTimeout(() => {
+      console.log('Tiempo');
+    }, 500000);
       
-      this.afAuth.signInWithEmailAndPassword(usuario,password).then((respuesta) => {
+
+    // Verificar si el correo está registrado antes de intentar el login
+    this.checkEmailExists(usuario).subscribe(existe => {
+      if (!existe) {
+        this.loading = false;
+        this.toastr.error('Este correo electrónico no está registrado. Por favor, verifica el correo electrónico o regístrate.', 'Error');
+        return;  // Salir de la función si el correo no está registrado
+      }
+
+
+    this.afAuth.signInWithEmailAndPassword(usuario,password).then((respuesta) => {
         console.log("Respuesta ",respuesta);
        //inicio 03 10
         // Obtenemos la fecha y hora del ingreso
@@ -162,6 +186,7 @@ export class LoginComponent implements OnInit {
         this.toastr.error(this._errorService.error(error.code),'Error')
         this.loginForm.reset();
     })
+  }); //agrgado
   }
 
   /*logLogin(email: any) {

@@ -13,6 +13,10 @@ import { TurnosclinicaComponent } from './turnosclinica/turnosclinica.component'
 import { LogReportComponent } from './log-report/log-report.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
 import { BaseChartDirective } from 'ng2-charts';
+import { TurnosdiaComponent } from './turnosdia/turnosdia.component';
+import { TurnosfinalizadosComponent } from './turnosfinalizados/turnosfinalizados.component';
+import { TurnospendientesComponent } from './turnospendientes/turnospendientes.component';
+import { TurnosespecialidadComponent } from './turnosespecialidad/turnosespecialidad.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { BaseChartDirective } from 'ng2-charts';
     TurnosclinicaComponent,
     LogReportComponent,
     IngresosComponent,
-    BaseChartDirective    
+    BaseChartDirective,
+    TurnosdiaComponent,
+    TurnosfinalizadosComponent,
+    TurnospendientesComponent,
+    TurnosespecialidadComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +55,11 @@ import { BaseChartDirective } from 'ng2-charts';
     TurnosclinicaComponent,
     LogReportComponent,
     IngresosComponent,
-    BaseChartDirective 
+    BaseChartDirective,
+    TurnosdiaComponent,
+    TurnosfinalizadosComponent,
+    TurnospendientesComponent,
+    TurnosespecialidadComponent   
   ]
 })
 

@@ -7,14 +7,6 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Rende
 
 export class CaptchamioDirective {
 
-  //@Input() question!: string; // La pregunta del captcha
-  //@Input() correctAnswer!: string; // La respuesta correcta del captcha
-  //@Output() validation = new EventEmitter<boolean>(); // Evento para emitir si es válido
-
-  //@Input() question: string = '';
-  //@Input() correctAnswer: string = '';
-  //@Output() validation: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   @Input() question: string; // La pregunta del captcha
   @Input() correctAnswer: string; // La respuesta correcta del captcha
   @Output() validation = new EventEmitter<boolean>(); 
@@ -36,10 +28,17 @@ export class CaptchamioDirective {
     // Validar la respuesta
     const isValid = value.trim() === this.correctAnswer;
     this.validation.emit(isValid); // Emitir si es válido o no
+
     this.renderer.setStyle(
       this.inputElement,
       'border-color',
       isValid ? 'green' : 'red'
+    );
+ 
+    this.renderer.setStyle(
+      this.inputElement,
+      'font-weight',
+      isValid ? 'bold' : 'bold'
     );
   }
 

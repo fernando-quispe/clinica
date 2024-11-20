@@ -1,0 +1,55 @@
+<app-menu-gral></app-menu-gral>
+
+<div id="contentToExport" class="conteiner mt-3">
+   <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br>    
+    <h3 class="text-center p-3">Lista de Turnos por Especialidad</h3>
+
+    <div class="box text-center">
+      <button  class="btn btn-primary btn-lg " (click)="downloadExcel()">Exportar a Excel</button>      
+      <button  class="btn btn-primary btn-lg " (click)="exportToPDF()">Exportar a PDF</button>
+    </div>    
+
+    <!-- Mostrar la cantidad de turnos por cada especialidad -->
+    <div *ngFor="let especialidad of especialidades">
+      <div>{{ especialidad }}: {{ especialidadCount[especialidad] || 0 }} turnos</div>
+    </div>
+    <br>
+
+    <div *ngIf='!loading' class="container-table table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-Active">
+          <tr class="table-dark">
+            <th class="separador1" scope="col">Especialidad</th> 
+            <th class="separador1" scope="col">Nombre Especialista</th>            
+            <th class="separador1" scope="col">Apellido Especialista</th>                         
+            <th class="separador1" scope="col">Día</th>
+            <th class="separador1" scope="col">Turno</th>            
+          </tr>
+        </thead> 
+        <tbody>
+          <!--<tr class="table-light" *ngFor="let turno of turnos">-->
+            <tr class="table-light" *ngFor="let turno of filteredTurnos()">
+            <td class="separador">{{ turno.especialidad }}</td>
+            <td class="separador">{{ turno.nombre }}</td>          
+            <td class="separador">{{ turno.apellido }}</td>                   
+            <td class="separador">{{ turno.dia }}</td>    
+            <td class="separador">{{ turno.turno }}</td>                                    
+          </tr>         
+        </tbody>
+      </table>
+    </div>  
+    <br>
+    
+    <!-- Gráfico de turnos -->
+    <div class="chart-container">
+      <canvas id="especialidadChart"></canvas>
+    </div>
+    <br><br>
+
+    <div class=" text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-primary btn-lg">Volver</button>      
+    </div>
+</div>

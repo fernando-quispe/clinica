@@ -138,8 +138,7 @@ export class MisTurnosEspecialistaComponent implements OnInit {
     this.actualTurno=item;
   }
 
-  volver() {
-    //localStorage.removeItem('loggedUser');
+  volver() {    
     this.router.navigateByUrl('/bienvenido')
   }
 }

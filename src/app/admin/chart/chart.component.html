@@ -1,0 +1,4 @@
+<div *ngIf="!loading">
+    <br>
+    <app-chart *ngIf="ingresos.length > 0" [chartLabels]="chartLabels" [chartData]="chartData"></app-chart>
+  </div>

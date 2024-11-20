@@ -1,0 +1,57 @@
+<app-menu-gral></app-menu-gral>
+
+<div id="contentToExport" class="conteiner mt-3">
+    <div *ngIf='loading' class="d-flex justify-content-center mt-5">
+      <app-spinner></app-spinner>
+    </div>
+    <br>    
+    <h3 class="text-center p-3">Lista de Turnos por Día</h3>
+
+    <div class="box text-center">
+      <button  class="btn btn-primary btn-lg " (click)="downloadExcel()">Exportar a Excel</button>
+      <button  class="btn btn-primary btn-lg " (click)="exportToPDF()">Exportar a PDF</button>
+    </div>
+  
+    <!-- Mostrar la cantidad de turnos por cada día -->
+    <div *ngIf="!loading">
+      <div *ngFor="let dia of objectKeys(diaCount)">
+        <div>{{ dia }}: {{ diaCount[dia] }} turnos</div>
+      </div>
+    </div>
+    <br>
+
+    <div *ngIf='!loading' class="container-table table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-Active">
+          <tr class="table-dark">
+            <th class="separador1" scope="col">Especialidad</th>            
+            <th class="separador1" scope="col">Nombre</th>
+            <th class="separador1" scope="col">Apellido</th>              
+            <th class="separador1" scope="col">Dia</th>
+            <th class="separador1" scope="col">Turno</th>
+            <th class="separador1" scope="col">Estado</th>
+          </tr>
+        </thead> 
+        <tbody>
+          <tr class="table-light" *ngFor="let turno of turnos">
+            <td class="separador">{{ turno.especialidad }}</td>          
+            <td class="separador">{{ turno.nombre }}</td>
+            <td class="separador">{{ turno.apellido }}</td>       
+            <td class="separador">{{ turno.dia }}</td>       
+            <td class="separador">{{ turno.turno }}</td>       
+            <td class="separador">{{ turno.estado }}</td>       
+          </tr>         
+        </tbody>
+      </table>
+    </div> 
+
+    
+    <!-- Canvas donde se dibujará el gráfico -->
+    <div class="chart-container mt-4">
+      <canvas id="turnosPorDiaChart"></canvas>
+    </div>
+    
+    <div class="text-center">
+      <button routerLink="/bienvenido" (click)="volver()" class="btn btn-primary btn-lg">Volver</button>      
+    </div>
+</div>

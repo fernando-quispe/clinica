@@ -9,6 +9,10 @@ import { SolicitarTurnoComponent } from '../paciente/solicitar-turno/solicitar-t
 import { TurnosclinicaComponent } from './turnosclinica/turnosclinica.component';
 import { LogReportComponent } from './log-report/log-report.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
+import { TurnosdiaComponent } from './turnosdia/turnosdia.component';
+import { TurnosfinalizadosComponent } from './turnosfinalizados/turnosfinalizados.component';
+import { TurnospendientesComponent } from './turnospendientes/turnospendientes.component';
+import { TurnosespecialidadComponent } from './turnosespecialidad/turnosespecialidad.component';
 
 const routes: Routes = [
   { path: 'genUsAdmin', component: GenerarUsuarioAdminComponent}, //,canActivate:[AutGuard]},
@@ -19,6 +23,10 @@ const routes: Routes = [
   { path: 'turnosclinica', component: TurnosclinicaComponent}, //agregado para los turnos totales de la clinica
   { path: 'logReporte', component: LogReportComponent},
   { path: 'ingresos', component: IngresosComponent},
+  { path: 'turnosdia', component: TurnosdiaComponent},
+  { path: 'turnosfinalizados', component: TurnosfinalizadosComponent},
+  { path: 'turnospendientes', component: TurnospendientesComponent},
+  { path: 'turnosespecialidad', component: TurnosespecialidadComponent},
   { path: '', redirectTo: 'bienvenidoLogin', pathMatch: 'full' },
   { path: '**', pathMatch: 'full', redirectTo: 'bienvenidoLogin' }
 ];

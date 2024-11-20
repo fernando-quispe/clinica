@@ -57,30 +57,8 @@
       <li  class="nav-item active" *ngIf="gralPerfil=='Especialista' ">        
         <a class="nav-link button" (click)=perfilEspecialista()>Mi Perfil</a>
       </li>    
-    
-    <!--  Administrador -->
-      <!--<li class="nav-item dropdown" *ngIf="gralPerfil=='Administrador' ">
-          <a class="nav-link dropdown-toggle" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdown02">              
-              <li> <a class="dropdown-item" (click)=Perfil()>Mi Perfil</a></li>
-              <li> <a class="dropdown-item" onclick="this.blur();" (click)="solicitarTurnoAdmin()">Solicitar Turno</a>
-              </li>              
-              <li class="divider">                
-              </li>
-              <li class="dropdown-submenu">
-                <a class="dropdown-item" data-toggle="dropdown">Usuarios</a>
-                <ul class="dropdown-menu">
-                  <li> <a class="dropdown-item" (click)=habilitarInhabilitar()>Habilitar/Inhabilitar Especialista</a></li>
-                  <li> <a class="dropdown-item" (click)=usuarioAdmin()>Lista Usuarios</a></li>
-                  <li> <a class="dropdown-item" (click)=genUsuarioAdmin()>Generar usuario</a></li>-->
-                  <!-- NO VA<li> <a class="dropdown-item" >Historia Clinica</a></li> -->
-                <!--</ul>
-              </li>
-          </ul>
-      </li>-->
 
-      <!--cambios administrador 02 11 -->
+      <!--ADMINISTRADOR -->
       <li  class="nav-item active" *ngIf="gralPerfil=='Administrador' ">
         <a  class="nav-link button" (click)=turnosclinica()>- Turnos -</a>     
       </li>
@@ -103,51 +81,15 @@
         <a class="nav-link button" data-toggle="dropdown">- Informes</a>
         <ul class="dropdown-menu button">
           <li> <a class="dropdown-item button" (click)=ingresos()>Log de Ingresos</a></li>
-          <!--<li> <a class="dropdown-item" (click)=usuarioAdmin()>Turnos por Especialidad</a></li>-->
-          <!--<li> <a class="dropdown-item" (click)=genUsuarioAdmin()>Turnos por Día</a></li>-->
-          <!-- <li> <a class="dropdown-item" >Historia Clinica</a></li> -->
+          <li> <a class="dropdown-item button" (click)=turnosespecialidad()>Cantidad Turnos por Especialidad</a></li>          
+          <li> <a class="dropdown-item button" (click)=turnosdia()>Cantidad Turnos por Día</a></li>
+          <li> <a class="dropdown-item button" (click)=turnospendientes()>Cantidad Turnos Solicitados</a></li>
+          <li> <a class="dropdown-item button" (click)=turnosfinalizados()>Cantidad Turnos Finalizados</a></li>          
         </ul>
-      </li>
-
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false"><b>Usuario:</b> {{ apeNom }}
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdown02">
-          <li> <a class="dropdown-item" (click)=desloguearse()>Desloguearse</a></li>
-        </ul>
-      </li> -->
+      </li>    
       <li class="nav-item active">
             <a class="nav-link button" (click)=desloguearse()> - Desloguearse</a>
       </li>
     </ul>
   </div>
 </nav>
-
-<!--
-ADMINISTRADOR
-Sección Usuarios(Administrador)
-Historia Clínica
-datos de los usuarios(excel)
-Turnos(Administrador)
-Solicitar Turno(Paciente,Administrador)
-Mi perfil
-datos del usuario
-
-PACIENTE
-Mis Turnos(Paciente, Especialista)
-Solicitar Turno(Paciente,Administrador)
-Mi perfil
-datos del usuario
-Historia Clínica(Pacientes)(pdf)
-
-
-ESPECIALISTA
-Mis Turnos(Paciente, Especialista)
-Mi perfil
-datos del usuario
-Mis horarios( perfil Especialista)
-Pacientes( perfil Especialista)
-  Historia Clínica(
-
--->
