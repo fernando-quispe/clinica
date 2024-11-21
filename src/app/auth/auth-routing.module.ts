@@ -9,7 +9,7 @@ import { LoginRegistrarAdminComponent } from './login-registrar-admin/login-regi
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { animation: 'login' } },
-  { path: 'MenuRegistrar', component: MenuRegistrarComponent},
+  { path: 'MenuRegistrar', component: MenuRegistrarComponent, data: { animation: 'MenuRegistrar' } },
   { path: 'registrarPaciente', component: LoginRegistrarUsuarioComponent},
   //{ path: 'registrarAdmin', component: LoginRegistrarAdminComponent},
   { path: 'registrar', component: LoginRegistrarComponent},

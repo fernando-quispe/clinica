@@ -18,6 +18,13 @@ export class UsuarioService {
     return this._refresh$;
   }
 
+  // Método para obtener únicamente los especialistas
+  obtenerEspecialistas(): Observable<Usuario[]> {
+    return this._firestore.collection<Usuario>('usuarios', ref =>
+      ref.where('rol', '==', 'especialista') // Filtrar usuarios por rol
+    ).valueChanges({ idField: 'id' }); // Incluye el ID del documento si es necesario
+  }
+
   crearUsuario(usuarioDato:Usuario){
     return this._firestore.collection('usuarios').add(usuarioDato);
   }

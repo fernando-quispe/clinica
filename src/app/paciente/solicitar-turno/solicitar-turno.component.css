@@ -131,6 +131,33 @@
     background-color: #556e78;
 }
 
+
+/* BOTÓN CUADRADO ELIJA ESPECIALIDAD*/
+.btn-solicitar-turno-final-2 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-radius: 0; /* Eliminar el redondeo para hacerlo cuadrado */
+        margin-top: 1rem;
+        width: 8rem; /* Establecer un ancho fijo */
+        height: 8rem; /* Establecer una altura fija para mantener la forma cuadrada */
+        margin-left: 20%; /* Centrar el botón */
+        color: white;
+        background-color: #3aa4eb;
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centrar el contenido dentro del botón */
+      }
+      
+      /* Estilo al pasar el cursor sobre el botón */
+      .btn-solicitar-turno-final-2:hover {
+        background-color: #3533af;
+      }
+      
+      .foto-especialista-2 {
+        max-width: 50%; /* Asegura que la imagen no ocupe todo el espacio */
+        margin-right: 5px; /* Espacio entre la imagen y el texto */
+      }  
+
 li{
     list-style: none;
 }
@@ -384,4 +411,63 @@ li{
       
 #btn-solicitar-turno:hover {
       background-color: #0056b3; /* Cambia el color al pasar el ratón */
+}
+
+.square-button {
+  width: 40%; /* Ajusta el botón al tamaño del contenedor */
+  height: 150px; /* Altura fija para el botón cuadrado */
+  padding: 0; /* Eliminar el padding para que ocupe todo el espacio */
+  border-radius: 0; /* Eliminar los bordes redondeados */
+  display: flex; /* Flexbox para alinear el contenido dentro del botón */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+}
+
+.square-button img {
+  max-width: 40px; /* Limita el tamaño de la imagen dentro del botón */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.square-button span {
+  text-align: center; /* Centra el texto dentro del botón */
+}
+
+
+/* Estilo para el contenedor de botones */
+#opciones-especialidades {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Espaciado entre los botones */
+}
+      
+/* Estilo para cada botón rectangular */
+.btn-especialidad-rectangular {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Espaciado entre imagen y texto */
+        width: 90%; /* Abarca todo el ancho disponible */
+        height: 80px; /* Altura fija para el botón */
+        background-color: #5bc5f0; /* Fondo del botón */
+        color: white;
+        border: 1px solid white;
+        border-radius: 8px; /* Bordes ligeramente redondeados */
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
+      
+/* Efecto al pasar el cursor */
+.btn-especialidad-rectangular:hover {
+        background-color: #3949d6;
+}
+      
+/* Estilo para las imágenes dentro de los botones */
+.foto-especialidad-3 {
+        max-width: 50px; /* Tamaño de la imagen */
+        margin-right: 15px; /* Separación entre imagen y texto */
+}
+      
+/* Estilo para el texto */
+.btn-especialidad-rectangular span {
+        font-weight: bold; /* Opcional: puedes hacer el texto más visible */
 }

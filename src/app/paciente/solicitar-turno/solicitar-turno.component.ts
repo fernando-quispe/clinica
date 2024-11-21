@@ -127,7 +127,6 @@ export class SolicitarTurnoComponent implements OnInit {
     return arrayEspecialidadesNoRepetidas;
   }
 
-
   especialidadElegida(valorEmitidoRecibido:any)
   {
     this.especialidadIngresada = valorEmitidoRecibido;
@@ -197,7 +196,7 @@ export class SolicitarTurnoComponent implements OnInit {
     }, 1000);
   }
 
-  //****************************************************** */
+  //******************************************************200 */
   // Procedimientos para seleccionar Turno para el paciente
   //******************************************************* */
 

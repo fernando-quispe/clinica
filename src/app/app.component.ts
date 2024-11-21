@@ -93,8 +93,8 @@ import { trigger, transition, style, animate, query, group } from '@angular/anim
           ])
         ]),
   
-        // Nueva transición: Escalado y desvanecimiento entre otras rutas
-        transition('bievenido<=>bienvenidoLogin1', [
+        // Nueva transición: Escalado y desvanecimiento entre otras rutas De adentro hacia afuera
+        transition('bienvenido<=>bienvenidoLogin', [
           style({ position: 'relative' }),
           query(':enter, :leave', [
             style({ position: 'absolute', width: '100%' })
@@ -112,7 +112,7 @@ import { trigger, transition, style, animate, query, group } from '@angular/anim
           ])
         ]),
         
-        transition('bienvenido <=> perfil', [
+        transition('login1 <=> MenuRegistrar', [
           style({ position: 'relative' }),
             query(':enter, :leave', [
               style({ position: 'absolute', width: '100%' })
@@ -128,7 +128,32 @@ import { trigger, transition, style, animate, query, group } from '@angular/anim
                 animate('300ms ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
               ], { optional: true })
           ])
+        ]),
+
+        // Transición con efecto de rotación y opacidad
+        transition('login2 <=> MenuRegistrar', [
+          style({ position: 'relative' }),
+            query(':enter, :leave', [
+              style({
+                position: 'absolute',
+                width: '100%',
+                transformOrigin: 'center'
+              })
+            ], { optional: true }),
+            query(':enter', [
+              style({ transform: 'rotateY(90deg)', opacity: 0 })
+            ], { optional: true }),
+            group([
+              query(':leave', [
+                animate('600ms ease-in', style({ transform: 'rotateY(-90deg)', opacity: 0 }))
+              ], { optional: true }),
+              query(':enter', [
+                animate('600ms ease-out', style({ transform: 'rotateY(0)', opacity: 1 }))
+              ], { optional: true })
+          ])
         ])
+
+
       ])
     ]
 })
