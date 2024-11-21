@@ -13,6 +13,7 @@
     </div>    
 
     <!-- Mostrar la cantidad de turnos por cada especialidad -->
+    <h4>Total de turnos por Especialidad:</h4> 
     <div *ngFor="let especialidad of especialidades">
       <div>{{ especialidad }}: {{ especialidadCount[especialidad] || 0 }} turnos</div>
     </div>

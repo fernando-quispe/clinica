@@ -13,6 +13,7 @@
     </div>
   
     <!-- Mostrar la cantidad de turnos por cada día -->
+    <h4>Total de turnos por Día:</h4> 
     <div *ngIf="!loading">
       <div *ngFor="let dia of objectKeys(diaCount)">
         <div>{{ dia }}: {{ diaCount[dia] }} turnos</div>
