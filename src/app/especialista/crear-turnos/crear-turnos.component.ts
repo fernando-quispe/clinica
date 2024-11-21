@@ -154,7 +154,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:00 a 08:30 hs',
+      turno: '08:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -167,7 +167,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:30 a 09:00 hs',
+      turno: '08:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -180,7 +180,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:00 a 09:30 hs',
+      turno: '09:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -193,7 +193,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:30 a 10:00 hs',
+      turno: '09:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -206,7 +206,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:00 a 10:30 hs',
+      turno: '10:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -219,7 +219,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:30 a 11:00 hs',
+      turno: '10:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -232,7 +232,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:00 a 11:30 hs',
+      turno: '11:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -245,7 +245,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:30 a 12:00 hs',
+      turno: '11:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -258,7 +258,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:00 a 12:30 hs',
+      turno: '12:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -271,7 +271,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:30 a 13:00 hs',
+      turno: '12:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -284,7 +284,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:00 a 13:30 hs',
+      turno: '13:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -297,7 +297,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:30 a 14:00 hs',
+      turno: '13:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -310,7 +310,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:00 a 14:30 hs',
+      turno: '14:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -323,7 +323,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:30 a 15:00 hs',
+      turno: '14:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -336,7 +336,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:00 a 15:30 hs',
+      turno: '15:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -349,7 +349,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:30 a 16:00 hs',
+      turno: '15:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -362,7 +362,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:00 a 16:30 hs',
+      turno: '16:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -375,7 +375,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:30 a 17:00 hs',
+      turno: '16:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -388,7 +388,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:00 a 17:30 hs',
+      turno: '17:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -401,7 +401,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:30 a 18:00 hs',
+      turno: '17:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -414,7 +414,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:00 a 18:30 hs',
+      turno: '18:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -427,7 +427,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:30 a 19:00 hs',
+      turno: '18:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Lunes'
@@ -441,7 +441,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:00 a 08:30 hs',
+      turno: '08:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -454,7 +454,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:30 a 09:00 hs',
+      turno: '08:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -467,7 +467,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:00 a 09:30 hs',
+      turno: '09:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -480,7 +480,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:30 a 10:00 hs',
+      turno: '09:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -493,7 +493,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:00 a 10:30 hs',
+      turno: '10:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -506,7 +506,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:30 a 11:00 hs',
+      turno: '10:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -519,7 +519,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:00 a 11:30 hs',
+      turno: '11:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -532,7 +532,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:30 a 12:00 hs',
+      turno: '11:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -545,7 +545,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:00 a 12:30 hs',
+      turno: '12:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -558,7 +558,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:30 a 13:00 hs',
+      turno: '12:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -571,7 +571,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:00 a 13:30 hs',
+      turno: '13:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -584,7 +584,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:30 a 14:00 hs',
+      turno: '13:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -597,7 +597,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:00 a 14:30 hs',
+      turno: '14:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -610,7 +610,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:30 a 15:00 hs',
+      turno: '14:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -623,7 +623,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:00 a 15:30 hs',
+      turno: '15:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -636,7 +636,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:30 a 16:00 hs',
+      turno: '15:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -649,7 +649,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:00 a 16:30 hs',
+      turno: '16:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -662,7 +662,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:30 a 17:00 hs',
+      turno: '16:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -675,7 +675,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:00 a 17:30 hs',
+      turno: '17:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -688,7 +688,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:30 a 18:00 hs',
+      turno: '17:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -701,7 +701,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:00 a 18:30 hs',
+      turno: '18:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -714,7 +714,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:30 a 19:00 hs',
+      turno: '18:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Martes'
@@ -728,7 +728,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:00 a 08:30 hs',
+      turno: '08:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -741,7 +741,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:30 a 09:00 hs',
+      turno: '08:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -754,7 +754,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:00 a 09:30 hs',
+      turno: '09:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -767,7 +767,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:30 a 10:00 hs',
+      turno: '09:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -780,7 +780,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:00 a 10:30 hs',
+      turno: '10:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -793,7 +793,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:30 a 11:00 hs',
+      turno: '10:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -806,7 +806,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:00 a 11:30 hs',
+      turno: '11:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -819,7 +819,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:30 a 12:00 hs',
+      turno: '11:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -832,7 +832,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:00 a 12:30 hs',
+      turno: '12:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -845,7 +845,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:30 a 13:00 hs',
+      turno: '12:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -858,7 +858,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:00 a 13:30 hs',
+      turno: '13:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -871,7 +871,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:30 a 14:00 hs',
+      turno: '13:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -884,7 +884,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:00 a 14:30 hs',
+      turno: '14:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -897,7 +897,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:30 a 15:00 hs',
+      turno: '14:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -910,7 +910,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:00 a 15:30 hs',
+      turno: '15:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -924,7 +924,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:30 a 16:00 hs',
+      turno: '15:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -937,7 +937,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:00 a 16:30 hs',
+      turno: '16:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -950,7 +950,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:30 a 17:00 hs',
+      turno: '16:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -963,7 +963,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:00 a 17:30 hs',
+      turno: '17:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -976,7 +976,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:30 a 18:00 hs',
+      turno: '17:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -989,7 +989,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:00 a 18:30 hs',
+      turno: '18:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -1002,7 +1002,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:30 a 19:00 hs',
+      turno: '18:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Miercoles'
@@ -1016,7 +1016,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:00 a 08:30 hs',
+      turno: '08:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1029,7 +1029,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:30 a 09:00 hs',
+      turno: '08:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1042,7 +1042,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:00 a 09:30 hs',
+      turno: '09:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1055,7 +1055,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:30 a 10:00 hs',
+      turno: '09:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1068,7 +1068,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:00 a 10:30 hs',
+      turno: '10:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1081,7 +1081,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:30 a 11:00 hs',
+      turno: '10:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1094,7 +1094,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:00 a 11:30 hs',
+      turno: '11:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1107,7 +1107,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:30 a 12:00 hs',
+      turno: '11:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1120,7 +1120,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:00 a 12:30 hs',
+      turno: '12:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1133,7 +1133,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:30 a 13:00 hs',
+      turno: '12:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1146,7 +1146,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:00 a 13:30 hs',
+      turno: '13:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1159,7 +1159,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:30 a 14:00 hs',
+      turno: '13:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1172,7 +1172,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:00 a 14:30 hs',
+      turno: '14:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1185,7 +1185,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:30 a 15:00 hs',
+      turno: '14:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1198,7 +1198,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:00 a 15:30 hs',
+      turno: '15:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1211,7 +1211,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:30 a 16:00 hs',
+      turno: '15:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1224,7 +1224,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:00 a 16:30 hs',
+      turno: '16:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1237,7 +1237,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:30 a 17:00 hs',
+      turno: '16:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1250,7 +1250,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:00 a 17:30 hs',
+      turno: '17:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1263,7 +1263,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:30 a 18:00 hs',
+      turno: '17:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1276,7 +1276,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:00 a 18:30 hs',
+      turno: '18:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1289,7 +1289,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:30 a 19:00 hs',
+      turno: '18:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Jueves'
@@ -1303,7 +1303,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:00 a 08:30 hs',
+      turno: '08:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1316,7 +1316,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:30 a 09:00 hs',
+      turno: '08:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1329,7 +1329,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:00 a 09:30 hs',
+      turno: '09:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1342,7 +1342,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:30 a 10:00 hs',
+      turno: '09:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1355,7 +1355,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:00 a 10:30 hs',
+      turno: '10:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1368,7 +1368,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:30 a 11:00 hs',
+      turno: '10:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1381,7 +1381,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:00 a 11:30 hs',
+      turno: '11:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1394,7 +1394,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:30 a 12:00 hs',
+      turno: '11:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1407,7 +1407,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:00 a 12:30 hs',
+      turno: '12:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1420,7 +1420,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:30 a 13:00 hs',
+      turno: '12:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1433,7 +1433,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:00 a 13:30 hs',
+      turno: '13:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1446,7 +1446,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:30 a 14:00 hs',
+      turno: '13:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1459,7 +1459,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:00 a 14:30 hs',
+      turno: '14:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1472,7 +1472,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '14:30 a 15:00 hs',
+      turno: '14:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1485,7 +1485,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:00 a 15:30 hs',
+      turno: '15:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1498,7 +1498,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '15:30 a 16:00 hs',
+      turno: '15:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1511,7 +1511,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:00 a 16:30 hs',
+      turno: '16:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1524,7 +1524,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '16:30 a 17:00 hs',
+      turno: '16:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1537,7 +1537,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:00 a 17:30 hs',
+      turno: '17:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1550,7 +1550,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '17:30 a 18:00 hs',
+      turno: '17:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1563,7 +1563,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:00 a 18:30 hs',
+      turno: '18:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1576,7 +1576,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '18:30 a 19:00 hs',
+      turno: '18:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Viernes'
@@ -1590,7 +1590,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:00 a 08:30 hs',
+      turno: '08:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1603,7 +1603,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '08:30 a 09:00 hs',
+      turno: '08:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1616,7 +1616,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:00 a 09:30 hs',
+      turno: '09:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1629,7 +1629,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '09:30 a 10:00 hs',
+      turno: '09:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1642,7 +1642,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:00 a 10:30 hs',
+      turno: '10:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1655,7 +1655,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '10:30 a 11:00 hs',
+      turno: '10:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1668,7 +1668,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:00 a 11:30 hs',
+      turno: '11:00 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1681,7 +1681,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '11:30 a 12:00 hs',
+      turno: '11:30 AM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1694,7 +1694,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:00 a 12:30 hs',
+      turno: '12:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1707,7 +1707,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '12:30 a 13:00 hs',
+      turno: '12:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1720,7 +1720,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:00 a 13:30 hs',
+      turno: '13:00 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'
@@ -1733,7 +1733,7 @@ export class CrearTurnosComponent implements OnInit {
       email: this.email,
       especialidad:this.especialidad,
       otraespecialidad: this.otraespecialidad,
-      turno: '13:30 a 14:00 hs',
+      turno: '13:30 PM',
       fotoPerfilUno:this.fotoPerfilUno,
       estado:'Libre',
       dia:'Sabado'

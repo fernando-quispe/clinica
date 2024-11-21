@@ -107,7 +107,7 @@
                         </div>
 
                         <!--Captcha-->
-                        <div class="col-md-6 mb-2">
+                        <div class="col-md-6 mb-2 colorTexto" >
                             <div appCaptchamio [question]="'¿Cuánto es 5 + 3?'" [correctAnswer]="'8'" (validation)="onCaptchaValidation($event)" formControlName="captcha">
                             </div>              
                             <span class="text-danger" *ngIf="registrarForm.get('captcha')?.hasError('required') && registrarForm.get('captcha')?.touched">
